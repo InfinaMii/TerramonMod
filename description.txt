@@ -1,1 +1,13 @@
-The Terramon Mod adds over 100 Pokemon to catch in your Terraria world, including new and improved mechanics or something like that idk
+The Terramon Mod is a cross between Terraria and the world of Pokémon, and adds over 100 Pokémon to the game for you to catch and collect!
+TODO:replace this description with a better one
+
+- Team Credits -
+
+Jamz - Original Team Founder
+EpicBoi - Team Manager
+InfinaMii - Team Leader, Programmer + Spriter
+KindredTheFox - Programmer
+Salti - Programmer
+Lobster123 - Spriter
+Toderra - Spriter
+Lost5ilver - Musician
