@@ -1,0 +1,38 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using TerramonMod.Items.Pokeballs;
+
+namespace TerramonMod.Items
+{
+	public class PikaSword : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			// DisplayName.SetDefault("PikaSword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("This is a basic modded sword gun thing.");
+		}
+
+		public override void SetDefaults()
+		{
+			Item.CloneDefaults(ItemID.Shuriken);
+			Item.width = 32;
+			Item.height = 32;
+			Item.knockBack = 6;
+			Item.value = 10000;
+			Item.rare = ItemRarityID.Green;
+			Item.autoReuse = false;
+			Item.shoot = ModContent.ProjectileType<PokeballProjectile>();
+			Item.shootSpeed = 6f; // Speed of the projectiles the sword will shoot
+		}
+
+
+        public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient(ItemID.DirtBlock, 10);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+	}
+}

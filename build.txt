@@ -1,0 +1,4 @@
+displayName = Terramon - Pokemon in Terraria!
+author = Terramon Team
+version = 1.0
+homepage = https://discord.gg/U8skDEA

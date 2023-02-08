@@ -1,0 +1,19 @@
+- Infina -
+Rare Candy sprite
+Thrown Pokeball sprites
+Base Code for Pokeball + Pokemon
+
+- Lobster - 
+Mod Icon
+
+- Rocket -
+Pokemart Clerk NPC
+Trainer Vanity
+Aspear Berry
+
+- Rose -
+Pokeball Items
+Apricorn Items
+Berries
+Healing Items
+Remaining Berries
