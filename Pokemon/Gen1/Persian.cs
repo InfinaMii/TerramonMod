@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<PersianPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "PersianNPC",
+            evolveAt = -1
         };
     }
 
     class PersianPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Persian";
+	    public override bool doesFly => false;
     }
 }

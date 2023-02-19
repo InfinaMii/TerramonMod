@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)180 / 255,
             petType = ModContent.ProjectileType<MachopPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "MachokeNPC",
+            evolveAt = 28
         };
     }
 
     class MachopPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Machop";
+	    public override bool doesFly => false;
     }
 }

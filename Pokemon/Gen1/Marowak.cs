@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<MarowakPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "MarowakNPC",
+            evolveAt = -1
         };
     }
 
     class MarowakPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Marowak";
+	    public override bool doesFly => false;
     }
 }

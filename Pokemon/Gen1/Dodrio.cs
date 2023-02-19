@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<DodrioPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "DodrioNPC",
+            evolveAt = -1
         };
     }
 
     class DodrioPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Dodrio";
+	    public override bool doesFly => false;
     }
 }

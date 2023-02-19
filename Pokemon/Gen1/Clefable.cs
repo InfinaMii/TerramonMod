@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)25 / 255,
             petType = ModContent.ProjectileType<ClefablePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ClefableNPC",
+            evolveAt = 0
         };
     }
 
     class ClefablePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Clefable";
+	    public override bool doesFly => false;
     }
 }

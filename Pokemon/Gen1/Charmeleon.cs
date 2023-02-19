@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<CharmeleonPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "CharizardNPC",
+            evolveAt = 36
         };
     }
 
     class CharmeleonPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Charmeleon";
+	    public override bool doesFly => false;
     }
 }

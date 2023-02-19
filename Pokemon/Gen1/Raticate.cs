@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)127 / 255,
             petType = ModContent.ProjectileType<RaticatePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "RaticateNPC",
+            evolveAt = -1
         };
     }
 
     class RaticatePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Raticate";
+	    public override bool doesFly => false;
     }
 }

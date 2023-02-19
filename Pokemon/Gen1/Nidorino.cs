@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<NidorinoPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "NidokingNPC",
+            evolveAt = 0
         };
     }
 
     class NidorinoPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Nidorino";
+	    public override bool doesFly => false;
     }
 }

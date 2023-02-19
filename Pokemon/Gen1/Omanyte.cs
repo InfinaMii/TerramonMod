@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.water,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<OmanytePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "OmastarNPC",
+            evolveAt = 40
         };
     }
 
     class OmanytePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Omanyte";
+	    public override bool doesFly => false;
     }
 }

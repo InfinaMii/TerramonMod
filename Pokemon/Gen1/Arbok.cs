@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<ArbokPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ArbokNPC",
+            evolveAt = -1
         };
     }
 
     class ArbokPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Arbok";
+	    public override bool doesFly => false;
     }
 }

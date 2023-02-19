@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<GloomPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "VileplumeNPC",
+            evolveAt = 0
         };
     }
 
     class GloomPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Gloom";
+	    public override bool doesFly => false;
     }
 }

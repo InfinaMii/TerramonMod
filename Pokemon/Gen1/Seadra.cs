@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<SeadraPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "KingdraNPC",
+            evolveAt = 0
         };
     }
 
     class SeadraPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Seadra";
+	    public override bool doesFly => false;
     }
 }

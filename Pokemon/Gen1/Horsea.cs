@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)225 / 255,
             petType = ModContent.ProjectileType<HorseaPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "SeadraNPC",
+            evolveAt = 32
         };
     }
 
     class HorseaPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Horsea";
+	    public override bool doesFly => false;
     }
 }

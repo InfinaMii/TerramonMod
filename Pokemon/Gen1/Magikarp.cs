@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<MagikarpPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "GyaradosNPC",
+            evolveAt = 20
         };
     }
 
     class MagikarpPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Magikarp";
+	    public override bool doesFly => false;
     }
 }

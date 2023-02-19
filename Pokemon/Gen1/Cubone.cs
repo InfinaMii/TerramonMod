@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<CubonePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "MarowakNPC",
+            evolveAt = 28
         };
     }
 
     class CubonePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Cubone";
+	    public override bool doesFly => false;
     }
 }

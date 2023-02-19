@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<PorygonPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "PorygonNPC",
+            evolveAt = 0
         };
     }
 
     class PorygonPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Porygon";
+	    public override bool doesFly => false;
     }
 }

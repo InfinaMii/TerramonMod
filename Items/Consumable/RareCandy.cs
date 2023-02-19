@@ -17,7 +17,7 @@ namespace TerramonMod.Items.Consumable
         {
             DisplayName.SetDefault("Rare Candy");
             Tooltip.SetDefault("A candy that is packed with energy.\nIt raises the level of a single Pokémon\nby one.");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 500; //journey mode dupe amount
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100; //journey mode dupe amount
         }
         public override void SetDefaults()
         {

@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<KangaskhanPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "KangaskhanNPC",
+            evolveAt = -1
         };
     }
 
     class KangaskhanPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Kangaskhan";
+	    public override bool doesFly => false;
     }
 }

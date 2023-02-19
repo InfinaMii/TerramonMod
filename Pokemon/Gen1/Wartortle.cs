@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<WartortlePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "BlastoiseNPC",
+            evolveAt = 36
         };
     }
 
     class WartortlePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Wartortle";
+	    public override bool doesFly => false;
     }
 }

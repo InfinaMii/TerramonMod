@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<DragonitePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "DragoniteNPC",
+            evolveAt = 55
         };
     }
 
     class DragonitePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Dragonite";
+	    public override bool doesFly => false;
     }
 }

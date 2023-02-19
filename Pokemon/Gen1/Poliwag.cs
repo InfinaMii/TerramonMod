@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<PoliwagPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "PoliwhirlNPC",
+            evolveAt = 25
         };
     }
 
     class PoliwagPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Poliwag";
+	    public override bool doesFly => false;
     }
 }

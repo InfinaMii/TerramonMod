@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<TangelaPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "TangrowthNPC",
+            evolveAt = 0
         };
     }
 
     class TangelaPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Tangela";
+	    public override bool doesFly => false;
     }
 }

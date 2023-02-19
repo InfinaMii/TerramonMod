@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.fairy,
             captureRate = (float)50 / 255,
             petType = ModContent.ProjectileType<WigglytuffPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "WigglytuffNPC",
+            evolveAt = 0
         };
     }
 
     class WigglytuffPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Wigglytuff";
+	    public override bool doesFly => false;
     }
 }

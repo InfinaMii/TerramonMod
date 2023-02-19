@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<TentacoolPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "TentacruelNPC",
+            evolveAt = 30
         };
     }
 
     class TentacoolPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Tentacool";
+	    public override bool doesFly => false;
     }
 }

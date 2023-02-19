@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)100 / 255,
             petType = ModContent.ProjectileType<KadabraPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "AlakazamNPC",
+            evolveAt = 0
         };
     }
 
     class KadabraPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Kadabra";
+	    public override bool doesFly => false;
     }
 }

@@ -36,7 +36,7 @@ namespace TerramonMod
             };
         }
 
-        public override void SaveData(TagCompound tag)
+		public override void SaveData(TagCompound tag)
         {
 			tag.Set(nameof(introPhase), introPhase);
 		}

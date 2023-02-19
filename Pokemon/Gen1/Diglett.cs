@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<DiglettPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "DugtrioNPC",
+            evolveAt = 26
         };
     }
 
     class DiglettPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Diglett";
+	    public override bool doesFly => false;
     }
 }

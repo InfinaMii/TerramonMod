@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.rock,
             captureRate = (float)60 / 255,
             petType = ModContent.ProjectileType<RhydonPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "RhyperiorNPC",
+            evolveAt = 0
         };
     }
 
     class RhydonPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Rhydon";
+	    public override bool doesFly => false;
     }
 }

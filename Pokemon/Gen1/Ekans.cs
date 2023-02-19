@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<EkansPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ArbokNPC",
+            evolveAt = 22
         };
     }
 
     class EkansPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Ekans";
+	    public override bool doesFly => false;
     }
 }

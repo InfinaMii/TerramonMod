@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<GyaradosPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "GyaradosNPC",
+            evolveAt = -1
         };
     }
 
     class GyaradosPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Gyarados";
+	    public override bool doesFly => false;
     }
 }

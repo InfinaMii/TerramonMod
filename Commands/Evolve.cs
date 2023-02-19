@@ -44,6 +44,7 @@ namespace TerramonMod.Commands
                 }
 
                 pokemon.data.Evolve();
+                pokemon.UpdateName();
             }
 
         }

@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<VenonatPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "VenomothNPC",
+            evolveAt = 31
         };
     }
 
     class VenonatPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Venonat";
+	    public override bool doesFly => false;
     }
 }

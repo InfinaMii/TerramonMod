@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.psychic,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<ExeggcutePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ExeggutorNPC",
+            evolveAt = 0
         };
     }
 
     class ExeggcutePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Exeggcute";
+	    public override bool doesFly => false;
     }
 }

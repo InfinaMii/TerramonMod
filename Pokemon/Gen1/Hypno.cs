@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<HypnoPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "HypnoNPC",
+            evolveAt = -1
         };
     }
 
     class HypnoPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Hypno";
+	    public override bool doesFly => false;
     }
 }

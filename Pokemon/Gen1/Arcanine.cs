@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<ArcaninePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ArcanineNPC",
+            evolveAt = -1
         };
     }
 
     class ArcaninePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Arcanine";
+	    public override bool doesFly => false;
     }
 }

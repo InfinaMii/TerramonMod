@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.psychic,
             captureRate = (float)60 / 255,
             petType = ModContent.ProjectileType<StarmiePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "StarmieNPC",
+            evolveAt = -1
         };
     }
 
     class StarmiePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Starmie";
+	    public override bool doesFly => false;
     }
 }

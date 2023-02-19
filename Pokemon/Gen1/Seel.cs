@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<SeelPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "DewgongNPC",
+            evolveAt = 34
         };
     }
 
     class SeelPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Seel";
+	    public override bool doesFly => false;
     }
 }

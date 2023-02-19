@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<ButterfreePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ButterfreeNPC",
+            evolveAt = 10
         };
     }
 
     class ButterfreePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Butterfree";
+	    public override bool doesFly => false;
     }
 }

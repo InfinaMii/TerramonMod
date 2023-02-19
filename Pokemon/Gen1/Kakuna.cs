@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<KakunaPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "BeedrillNPC",
+            evolveAt = 10
         };
     }
 
     class KakunaPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Kakuna";
+	    public override bool doesFly => false;
     }
 }

@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<AerodactylPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "AerodactylNPC",
+            evolveAt = -1
         };
     }
 
     class AerodactylPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Aerodactyl";
+	    public override bool doesFly => false;
     }
 }

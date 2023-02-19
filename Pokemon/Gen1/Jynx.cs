@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.psychic,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<JynxPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "JynxNPC",
+            evolveAt = -1
         };
     }
 
     class JynxPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Jynx";
+	    public override bool doesFly => false;
     }
 }

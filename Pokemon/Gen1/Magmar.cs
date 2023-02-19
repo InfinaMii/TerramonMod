@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<MagmarPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "MagmortarNPC",
+            evolveAt = 0
         };
     }
 
     class MagmarPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Magmar";
+	    public override bool doesFly => false;
     }
 }
