@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ice,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<LaprasPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "LaprasNPC",
+            evolveAt = -1
         };
     }
 
     class LaprasPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Lapras";
+	    public override bool doesFly => false;
     }
 }

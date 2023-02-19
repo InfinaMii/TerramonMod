@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)50 / 255,
             petType = ModContent.ProjectileType<DugtrioPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "DugtrioNPC",
+            evolveAt = -1
         };
     }
 
     class DugtrioPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Dugtrio";
+	    public override bool doesFly => false;
     }
 }

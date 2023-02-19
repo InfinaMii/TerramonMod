@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<MetapodPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ButterfreeNPC",
+            evolveAt = 10
         };
     }
 
     class MetapodPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Metapod";
+	    public override bool doesFly => false;
     }
 }

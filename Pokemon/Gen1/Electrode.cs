@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)60 / 255,
             petType = ModContent.ProjectileType<ElectrodePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ElectrodeNPC",
+            evolveAt = -1
         };
     }
 
     class ElectrodePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Electrode";
+	    public override bool doesFly => false;
     }
 }

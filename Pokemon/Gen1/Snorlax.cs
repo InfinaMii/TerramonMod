@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)25 / 255,
             petType = ModContent.ProjectileType<SnorlaxPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "SnorlaxNPC",
+            evolveAt = -1
         };
     }
 
     class SnorlaxPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Snorlax";
+	    public override bool doesFly => false;
     }
 }

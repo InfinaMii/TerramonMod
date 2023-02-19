@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<KoffingPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "WeezingNPC",
+            evolveAt = 35
         };
     }
 
     class KoffingPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Koffing";
+	    public override bool doesFly => false;
     }
 }

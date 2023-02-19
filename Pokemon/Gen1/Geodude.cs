@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ground,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<GeodudePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "GravelerNPC",
+            evolveAt = 25
         };
     }
 
     class GeodudePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Geodude";
+	    public override bool doesFly => false;
     }
 }

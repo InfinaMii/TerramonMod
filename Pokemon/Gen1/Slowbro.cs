@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.psychic,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<SlowbroPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "SlowbroNPC",
+            evolveAt = -1
         };
     }
 
     class SlowbroPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Slowbro";
+	    public override bool doesFly => false;
     }
 }

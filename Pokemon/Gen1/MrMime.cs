@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.fairy,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<MrMimePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "MrRimeNPC",
+            evolveAt = 42
         };
     }
 
     class MrMimePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/MrMime";
+	    public override bool doesFly => false;
     }
 }

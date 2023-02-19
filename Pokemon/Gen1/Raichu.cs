@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<RaichuPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "RaichuNPC",
+            evolveAt = 0
         };
     }
 
     class RaichuPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Raichu";
+	    public override bool doesFly => false;
     }
 }

@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<PinsirPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "PinsirNPC",
+            evolveAt = -1
         };
     }
 
     class PinsirPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Pinsir";
+	    public override bool doesFly => false;
     }
 }

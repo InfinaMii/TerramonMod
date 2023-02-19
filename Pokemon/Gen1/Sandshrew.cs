@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<SandshrewPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "SandslashNPC",
+            evolveAt = 22
         };
     }
 
     class SandshrewPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Sandshrew";
+	    public override bool doesFly => false;
     }
 }

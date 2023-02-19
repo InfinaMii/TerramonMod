@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ice,
             captureRate = (float)60 / 255,
             petType = ModContent.ProjectileType<CloysterPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "CloysterNPC",
+            evolveAt = -1
         };
     }
 
     class CloysterPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Cloyster";
+	    public override bool doesFly => false;
     }
 }

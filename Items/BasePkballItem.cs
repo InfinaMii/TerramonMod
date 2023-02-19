@@ -43,6 +43,7 @@ namespace TerramonMod.Items
 			Item.maxStack = 99;
 			Item.damage = 0;
 			Item.autoReuse = false;
+			Item.useStyle = ItemUseStyleID.Thrust;
 			Item.rare = ItemRarityID.Blue;
 			Item.value = igPrice * 2;
 		}

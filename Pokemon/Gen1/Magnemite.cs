@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.steel,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<MagnemitePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "MagnetonNPC",
+            evolveAt = 30
         };
     }
 
     class MagnemitePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Magnemite";
+	    public override bool doesFly => false;
     }
 }

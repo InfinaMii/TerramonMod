@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<JolteonPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "JolteonNPC",
+            evolveAt = -1
         };
     }
 
     class JolteonPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Jolteon";
+	    public override bool doesFly => false;
     }
 }

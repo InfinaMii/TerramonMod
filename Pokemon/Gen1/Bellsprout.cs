@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<BellsproutPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "WeepinbellNPC",
+            evolveAt = 21
         };
     }
 
     class BellsproutPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Bellsprout";
+	    public override bool doesFly => false;
     }
 }

@@ -145,6 +145,7 @@ namespace TerramonMod.NPCs
             {
 				var player = Main.LocalPlayer.GetModPlayer<TerramonPlayer>();
 				player.pokeInUse.data.Evolve();
+				player.pokeInUse.UpdateName();
 			}
         }
 

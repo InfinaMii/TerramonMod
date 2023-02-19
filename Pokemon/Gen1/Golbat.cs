@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<GolbatPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "CrobatNPC",
+            evolveAt = 0
         };
     }
 
     class GolbatPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Golbat";
+	    public override bool doesFly => false;
     }
 }

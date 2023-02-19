@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<NinetalesPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "NinetalesNPC",
+            evolveAt = -1
         };
     }
 
     class NinetalesPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Ninetales";
+	    public override bool doesFly => false;
     }
 }

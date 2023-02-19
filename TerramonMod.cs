@@ -8,12 +8,15 @@ using TerramonMod.Items;
 using System.Diagnostics;
 using System.IO;
 using ReLogic.Content;
+using Terraria.UI;
+using TerramonMod.UI;
 
 namespace TerramonMod
 {
 	public class TerramonMod : Mod
 	{
 		public static bool fastAnimations = false;
+
 		public enum PkmnType
 		{
 			none,

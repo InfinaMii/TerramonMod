@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)50 / 255,
             petType = ModContent.ProjectileType<AlakazamPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "AlakazamNPC",
+            evolveAt = 0
         };
     }
 
     class AlakazamPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Alakazam";
+	    public override bool doesFly => false;
     }
 }

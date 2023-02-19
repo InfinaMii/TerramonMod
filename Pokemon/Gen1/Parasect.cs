@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.grass,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<ParasectPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ParasectNPC",
+            evolveAt = -1
         };
     }
 
     class ParasectPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Parasect";
+	    public override bool doesFly => false;
     }
 }

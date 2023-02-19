@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<MeowthPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "PersianNPC",
+            evolveAt = 28
         };
     }
 
     class MeowthPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Meowth";
+	    public override bool doesFly => false;
     }
 }

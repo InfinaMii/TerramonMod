@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<DrowzeePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "HypnoNPC",
+            evolveAt = 26
         };
     }
 
     class DrowzeePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Drowzee";
+	    public override bool doesFly => false;
     }
 }

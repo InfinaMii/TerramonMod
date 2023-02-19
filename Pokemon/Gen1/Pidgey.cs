@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<PidgeyPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "PidgeottoNPC",
+            evolveAt = 18
         };
     }
 
     class PidgeyPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Pidgey";
+	    public override bool doesFly => false;
     }
 }

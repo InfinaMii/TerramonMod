@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)200 / 255,
             petType = ModContent.ProjectileType<AbraPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "KadabraNPC",
+            evolveAt = 16
         };
     }
 
     class AbraPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Abra";
+	    public override bool doesFly => false;
     }
 }

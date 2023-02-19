@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<LickitungPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "LickilickyNPC",
+            evolveAt = 0
         };
     }
 
     class LickitungPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Lickitung";
+	    public override bool doesFly => false;
     }
 }

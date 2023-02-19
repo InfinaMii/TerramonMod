@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ice,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<DewgongPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "DewgongNPC",
+            evolveAt = -1
         };
     }
 
     class DewgongPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Dewgong";
+	    public override bool doesFly => false;
     }
 }

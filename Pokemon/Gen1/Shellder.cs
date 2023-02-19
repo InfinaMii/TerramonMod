@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<ShellderPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "CloysterNPC",
+            evolveAt = 0
         };
     }
 
     class ShellderPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Shellder";
+	    public override bool doesFly => false;
     }
 }

@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)225 / 255,
             petType = ModContent.ProjectileType<KrabbyPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "KinglerNPC",
+            evolveAt = 28
         };
     }
 
     class KrabbyPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Krabby";
+	    public override bool doesFly => false;
     }
 }

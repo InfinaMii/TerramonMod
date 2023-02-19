@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<GengarPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "GengarNPC",
+            evolveAt = 0
         };
     }
 
     class GengarPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Gengar";
+	    public override bool doesFly => false;
     }
 }

@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ground,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<OnixPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "SteelixNPC",
+            evolveAt = 0
         };
     }
 
     class OnixPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Onix";
+	    public override bool doesFly => false;
     }
 }

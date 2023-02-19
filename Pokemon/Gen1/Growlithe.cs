@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<GrowlithePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ArcanineNPC",
+            evolveAt = 0
         };
     }
 
     class GrowlithePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Growlithe";
+	    public override bool doesFly => false;
     }
 }

@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<SpearowPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "FearowNPC",
+            evolveAt = 20
         };
     }
 
     class SpearowPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Spearow";
+	    public override bool doesFly => false;
     }
 }

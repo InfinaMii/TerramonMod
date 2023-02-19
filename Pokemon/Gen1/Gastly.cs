@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<GastlyPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "HaunterNPC",
+            evolveAt = 25
         };
     }
 
     class GastlyPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Gastly";
+	    public override bool doesFly => false;
     }
 }

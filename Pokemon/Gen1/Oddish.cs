@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<OddishPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "GloomNPC",
+            evolveAt = 21
         };
     }
 
     class OddishPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Oddish";
+	    public override bool doesFly => false;
     }
 }

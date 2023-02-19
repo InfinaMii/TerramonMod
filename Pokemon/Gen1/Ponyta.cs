@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<PonytaPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "RapidashNPC",
+            evolveAt = 40
         };
     }
 
     class PonytaPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Ponyta";
+	    public override bool doesFly => false;
     }
 }

@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.fighting,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<PoliwrathPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "PoliwrathNPC",
+            evolveAt = 0
         };
     }
 
     class PoliwrathPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Poliwrath";
+	    public override bool doesFly => false;
     }
 }

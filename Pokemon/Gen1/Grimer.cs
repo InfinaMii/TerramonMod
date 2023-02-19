@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<GrimerPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "MukNPC",
+            evolveAt = 38
         };
     }
 
     class GrimerPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Grimer";
+	    public override bool doesFly => false;
     }
 }

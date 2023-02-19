@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.water,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<KabutoPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "KabutopsNPC",
+            evolveAt = 40
         };
     }
 
     class KabutoPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Kabuto";
+	    public override bool doesFly => false;
     }
 }

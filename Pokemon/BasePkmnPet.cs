@@ -6,6 +6,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerramonMod.Pokemon;
+using Terraria.DataStructures;
 
 namespace TerramonMod.Pokemon
 {
@@ -34,6 +35,19 @@ namespace TerramonMod.Pokemon
 				AIType = ProjectileID.Bunny; // Copy the AI of the Bunny Pet.
 			Projectile.width = 32;
 			Projectile.height = 32;
+		}
+
+        public override void OnSpawn(IEntitySource source)
+        {
+			//Face player's direction and move ahead of player
+			int direction = Main.player[Projectile.owner].direction;
+			Projectile.direction = direction;
+			if (direction == -1)
+				Projectile.position.X -= 36;
+			else
+				Projectile.position.X += 48;
+
+			//Main.NewText(direction, Color.White);
 		}
 
 		public override bool PreAI() {

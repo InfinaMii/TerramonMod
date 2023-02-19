@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<ScytherPet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "ScizorNPC",
+            evolveAt = 0
         };
     }
 
     class ScytherPet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Scyther";
+	    public override bool doesFly => false;
     }
 }

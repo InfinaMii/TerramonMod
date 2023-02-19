@@ -25,13 +25,14 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<PrimeapePet>(),
-            evolveInto = null,//"[PokemonEvoName]NPC",
-            evolveAt = 20 //TODO: grab this somehow
+            evolveInto = "AnnihilapeNPC",
+            evolveAt = 0
         };
     }
 
     class PrimeapePet : BasePkmnPet
     {
         public override string Texture => "TerramonMod/Pokemon/Gen1/Primeape";
+	    public override bool doesFly => false;
     }
 }
