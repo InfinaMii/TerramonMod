@@ -8,6 +8,7 @@ EpicBoi - Team Manager
 InfinaMii - Team Leader, Programmer + Spriter
 KindredTheFox - Programmer
 Salti - Programmer
+gump - Programmer
 Lobster123 - Spriter
 Toderra - Spriter
 Lost5ilver - Musician
