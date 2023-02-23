@@ -20,8 +20,8 @@ namespace TerramonMod.Pokemon
     {
 		public virtual PkmnInfo info => null;
 		public virtual int wildLevel => 0;
-		public virtual float commodity => 0.05f;
-		public virtual bool doesFly => true;
+		public virtual float commodity => 1f;
+		public virtual bool doesFly => false;
 
 		public bool isShiny = false;
 		public bool catchable = true;
@@ -81,7 +81,7 @@ namespace TerramonMod.Pokemon
 			NPC.HitSound = null;
 			NPC.DeathSound = null;
 			NPC.netAlways = true;
-			NPC.noGravity = true;
+			//NPC.noGravity = true;
 			//NPC.wet = true;
 			//NPC.scale = 2;
 			//NPC.dontTakeDamage = true;
@@ -110,7 +110,7 @@ namespace TerramonMod.Pokemon
 					// TODO: add in spawning for more types
             }
 
-            return spawnChance;
+            return spawnChance * 0.05f;
 		}
 
 		public override void FindFrame(int frameHeight)

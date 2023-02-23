@@ -38,9 +38,17 @@ namespace TerramonMod.Pokemon
             return 0;
         }
 
+        public bool CanLevelUp()
+        {
+            if (level >= 100)
+                return false;
+            else
+                return true;
+        }
+
         public bool LevelUp(int howMany = 1)
         {
-            if (level == 100)
+            if (!CanLevelUp())
                 return false;
 
             level += howMany;
