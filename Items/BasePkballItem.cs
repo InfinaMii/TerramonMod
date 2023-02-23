@@ -13,6 +13,7 @@ using Terraria.ModLoader.IO;
 using TerramonMod.Items.Pokeballs;
 using TerramonMod.Pokemon;
 using TerramonMod.Pokemon.Gen1;
+using System;
 
 namespace TerramonMod.Items
 {
@@ -52,9 +53,18 @@ namespace TerramonMod.Items
 
 		public override bool CanUseItem(Player player) => (player.altFunctionUse != 2); //Don't execute this code if the alternate function is being executed
 
-		public void SetUnsellable()
+		public void SetContents(PkmnData newData)
         {
-			Item.value = -1;
+			if (newData == null || newData.pkmn == null)
+				SetDefaults();
+			else
+			{
+				newData.level = Math.Clamp(newData.level, 1, 100);
+				data = newData;
+				Item.value = -1;
+			}
+
+			UpdateName();
 		}
 
         public override void UpdateInventory(Player player)
@@ -122,7 +132,16 @@ namespace TerramonMod.Items
         }
 		public override bool CanStackInWorld(Item item2) => CanStack(item2);
 
-		public override void ModifyTooltips(List<TooltipLine> tooltips)
+        public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+        {
+			//If this isn't running on server & client player has TerramonPlayer & client's pokemon is this item
+			if (Main.netMode != NetmodeID.Server && Main.player[Main.myPlayer].TryGetModPlayer<TerramonPlayer>(out var p) && p.pokeInUse == this)
+					p.pokeInUse = null; //remove client's pokemon (since they no longer hold its pokeball)
+
+            return base.PreDrawInWorld(spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
+        }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             if (data != null)
             {

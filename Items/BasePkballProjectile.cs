@@ -245,32 +245,16 @@ namespace TerramonMod.Items
 
         public void PokemonCatchSuccess()
         {
-            if (Main.player[Projectile.owner].whoAmI == Main.myPlayer)
-            {
-                //Main.player[Projectile.owner].GetModPlayer<tmonPlayer>().AddPokemon(capture.info);
-                //Item pokemon = new Item(ModContent.ItemType<PokeballItem>());
-                //var modItem = (BasePkballItem)pokemon.ModItem;
-                /*var givePkball = ModContent.GetModItem(pokeballCapture) as BasePkballItem;
-                givePkball.data = new PkmnData { pkmn = capture.Type, level = capture.level };
-                givePkball.SetUnsellable();
-                givePkball.UpdateName();
-                //givePkball.Item.position = Main.player[Projectile.owner].position;
-                Item i = new();
-                givePkball.Clone(i);
-                i.position = Main.player[Projectile.owner].position;*/
-
-                var givePkball = Main.player[Projectile.owner].QuickSpawnItemDirect(this.Entity.GetSource_DropAsItem(), pokeballCapture).ModItem as BasePkballItem;
-                givePkball.data = new PkmnData { pkmn = capture.GetType().Name, level = capture.level, isShiny = capture.isShiny };
-                givePkball.SetUnsellable();
-                givePkball.UpdateName();
-                //Item.NewItem(this.Entity.GetSource_DropAsItem(), Main.player[Projectile.owner].position, pokeballCapture);
-
-                //item.hold.Nickname = "Keffreye";
+            var newItem = Item.NewItem(this.Entity.GetSource_DropAsItem(), Main.player[Projectile.owner].position, pokeballCapture);
+            var newPkball = Main.item[newItem].ModItem as BasePkballItem;
+            newPkball.SetContents(new PkmnData { pkmn = capture.GetType().Name, level = capture.level, isShiny = capture.isShiny });
+            if (Main.netMode == NetmodeID.MultiplayerClient)
+                NetMessage.SendData(MessageID.SyncItem, -1, -1, null, newItem, 1f);
+            //item.hold.Nickname = "Keffreye";
 
 
-                SoundEngine.PlaySound(new SoundStyle("TerramonMod/Sounds/pkball_catch_pla"));
-                Main.NewText($"Congratulations! You caught a level {givePkball.data.level} {capture.info.Name}", Color.Orange);
-            }
+            SoundEngine.PlaySound(new SoundStyle("TerramonMod/Sounds/pkball_catch_pla"));
+            Main.NewText($"Congratulations! You caught a level {capture.level} {capture.info.Name}", Color.Orange);
             Projectile.Kill();
         }
 

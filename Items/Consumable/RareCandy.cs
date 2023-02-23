@@ -31,10 +31,23 @@ namespace TerramonMod.Items.Consumable
         }
         public override bool CanUseItem(Player player)
         {
-            if (player.GetModPlayer<TerramonPlayer>().pokeInUse != null)
-                return true;
-            Main.NewText("You need to summon your Pokemon to use this item!", Color.Red);
-            return false;
+            bool hasPokemon = player.GetModPlayer<TerramonPlayer>().pokeInUse != null;
+            if (!hasPokemon)
+            {
+                Main.NewText("You need to summon your Pokemon to use this item!", Color.Red);
+                return false;
+            }
+            else
+            {
+                bool canLevelUp = player.GetModPlayer<TerramonPlayer>().pokeInUse.data.CanLevelUp();
+                if (!canLevelUp)
+                {
+                    Main.NewText("Your Pokemon's level can't get any higher!", Color.Red);
+                    return false;
+                }
+                else
+                    return true;
+            }
         }
 
         public override bool? UseItem(Player player) //Manage what happens when the player uses the item
