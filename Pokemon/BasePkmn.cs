@@ -60,17 +60,16 @@ namespace TerramonMod.Pokemon
 
 			if (doesFly)
 			{
-				//NPC.CloneDefaults(NPCID.Butterfly);
-				NPC.aiStyle = NPCAIStyleID.Firefly;
-				AIType = NPCID.Firefly;
-				
+				NPC.aiStyle = NPCAIStyleID.Passive;
+				AIType = NPCID.LadyBug;
+				NPC.noGravity = true;
 			}
 			else
 			{
 				NPC.CloneDefaults(NPCID.Bunny);
-				
-				NPC.aiStyle = NPCAIStyleID.Passive; //change to -1 if writing custom movement AI
-				//NPC.noGravity = false;
+				NPC.aiStyle = NPCAIStyleID.Passive;
+				AIType = NPCID.Bunny;
+				NPC.noGravity = false;
 			}
 
 			NPC.width = 32;
@@ -81,6 +80,7 @@ namespace TerramonMod.Pokemon
 			NPC.HitSound = null;
 			NPC.DeathSound = null;
 			NPC.netAlways = true;
+			NPC.friendly = true;
 			//NPC.noGravity = true;
 			//NPC.wet = true;
 			//NPC.scale = 2;

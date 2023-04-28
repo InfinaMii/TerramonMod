@@ -64,6 +64,9 @@ namespace TerramonMod.Items
                 Projectile.velocity.Y = oldVelocity.Y *= -0.7f;
                 Projectile.velocity.X = oldVelocity.X *= 0.5f;
                 SoundEngine.PlaySound(new SoundStyle("TerramonMod/Sounds/pkball_bounce"), Projectile.position);
+
+                if (Projectile.velocity.Length() < 1.5f)
+                    bounces = 0;
             }
             else if (Projectile.ai[1] == 0)
             {

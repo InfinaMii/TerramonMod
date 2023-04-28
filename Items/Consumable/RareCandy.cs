@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Terraria;
 using Microsoft.Xna.Framework;
+using Terraria.Audio;
 
 namespace TerramonMod.Items.Consumable
 {
@@ -25,7 +26,7 @@ namespace TerramonMod.Items.Consumable
             Item.maxStack = 999;
             Item.value = 3000;
             Item.consumable = true;
-            Item.UseSound = SoundID.Item30;
+            Item.UseSound = null;
             Item.useTime = 20;
             Item.useAnimation = Item.useTime;
         }
@@ -54,6 +55,7 @@ namespace TerramonMod.Items.Consumable
         {
             var pkmn = player.GetModPlayer<TerramonPlayer>().pokeInUse;
             pkmn.data.LevelUp();
+            SoundEngine.PlaySound(SoundID.Item29 with { Volume = 0.5f }, player.position);
             Main.NewText($"{pkmn.data.GetName()} is now Level {pkmn.data.level}!", Color.Yellow);
             return true;
         }

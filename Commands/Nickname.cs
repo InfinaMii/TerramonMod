@@ -21,15 +21,16 @@ namespace TerramonMod.Commands
 
         public override void Action(CommandCaller caller, string input, string[] args)
         {
+            bool setName = true;
             if (args.Length == 0)
-                return;
+                setName = false;
 
             var pokemon = Main.player[Main.myPlayer].GetModPlayer<TerramonPlayer>().pokeInUse;
 
             if (pokemon != null)
             {
                 var nickname = string.Join(" ", args);
-                if (nickname == pokemon.data.GetInfo().Name)
+                if (!setName || nickname == pokemon.data.GetInfo().Name)
                 {
                     pokemon.data.Nickname = null;
                     Main.NewText($"Your {pokemon.data.GetName()}'s name has been reset.", Color.Yellow);

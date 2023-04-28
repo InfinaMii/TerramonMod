@@ -32,7 +32,6 @@ namespace TerramonMod.Items
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99; //Amount of Pokeballs needed to duplicate them in Journey Mode
 		}
 
-
 		public override void SetDefaults()
 		{
 			Item.CloneDefaults(ItemID.Shuriken);
@@ -46,7 +45,7 @@ namespace TerramonMod.Items
 			Item.autoReuse = false;
 			Item.useStyle = ItemUseStyleID.Thrust;
 			Item.rare = ItemRarityID.Blue;
-			Item.value = igPrice * 2;
+			Item.value = igPrice * 3;
 		}
 
 		public override bool CanShoot(Player player) => (data == null);
@@ -81,9 +80,7 @@ namespace TerramonMod.Items
 
 			if (data != null)
 			{
-				string suffix = "";
-				if (data.isShiny)
-					suffix = "_Shiny";
+				string suffix = data.isShiny ? "_Shiny" : "";
 
 				Texture2D pokemonSprite = ModContent.Request<Texture2D>($"TerramonMod/Minisprites/mini{data.GetInfo().Name}{suffix}").Value;
 				spriteBatch.Draw(pokemonSprite, new Vector2(position.X - (12 * scale), position.Y - (16 * scale)), null, drawColor, 0f, origin, scale, SpriteEffects.None, 0f);
@@ -134,7 +131,7 @@ namespace TerramonMod.Items
 
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
-			//If this isn't running on server & client player has TerramonPlayer & client's pokemon is this item
+			//If this isn't running on server & client player is TerramonPlayer & client's pokemon is this item
 			if (Main.netMode != NetmodeID.Server && Main.player[Main.myPlayer].TryGetModPlayer<TerramonPlayer>(out var p) && p.pokeInUse == this)
 					p.pokeInUse = null; //remove client's pokemon (since they no longer hold its pokeball)
 
