@@ -1,5 +1,10 @@
-The Terramon Mod is a cross between Terraria and the world of Pokémon, and adds over 100 Pokémon to the game for you to catch and collect!
-TODO:replace this description with a better one
+In the Terramon mod, you can catch and evolve all of your favourite Pokemon from the Kanto region!
+The mod also features:
+- A new NPC who sells you important items such as Pokeballs
+- Rare Candies dropped from bosses to level up and evolve your Pokemon
+- A new Pokemon Trainer costume for you to wear
+
+TODO: make the description better than this -w-
 
 - Team Credits -
 
@@ -8,6 +13,7 @@ EpicBoi - Team Manager
 InfinaMii - Team Leader, Programmer + Spriter
 KindredTheFox - Programmer
 Salti - Programmer
+gump - Programmer
 Lobster123 - Spriter
 Toderra - Spriter
 Lost5ilver - Musician

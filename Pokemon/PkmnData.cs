@@ -22,9 +22,9 @@ namespace TerramonMod.Pokemon
             if (IsEvolveReady() != 1)
                 return;
 
-            var info = GetInfo();
+            var name = GetName();
             pkmn = GetInfo().evolveInto;
-            Main.NewText($"Congratulations! Your {info.Name} evolved into {GetInfo().Name}!", Color.Yellow);
+            Main.NewText($"Congratulations! Your {name} evolved into {GetInfo().Name}!", Color.Yellow);
         }
 
         public int IsEvolveReady()

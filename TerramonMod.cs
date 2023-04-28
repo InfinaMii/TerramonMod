@@ -10,6 +10,8 @@ using System.IO;
 using ReLogic.Content;
 using Terraria.UI;
 using TerramonMod.UI;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace TerramonMod
 {
@@ -48,6 +50,16 @@ namespace TerramonMod
 			{
 				Ref<Effect> fxPkmnSpawnRef = new Ref<Effect>(ModContent.Request<Effect>("TerramonMod/Effects/PkmnSpawn", AssetRequestMode.ImmediateLoad).Value);
 				GameShaders.Misc["fxPkmnSpawn"] = new MiscShaderData(fxPkmnSpawnRef, "TerramonShaderPass");
+			}
+
+			//Compatibility with Dialogue Panel Rework mod
+			if (ModLoader.TryGetMod("DialogueTweak", out Mod dialogueTweak))
+			{
+				dialogueTweak.Call(
+					"ReplaceExtraButtonIcon",
+					ModContent.NPCType<NPCs.PokemartClerk>(),
+					"TerramonMod/UI/EvolveIcon"
+					);
 			}
 		}
 
