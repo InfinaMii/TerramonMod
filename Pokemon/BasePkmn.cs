@@ -13,6 +13,7 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 using TerramonMod.Items;
 using static TerramonMod.TerramonMod;
+using TerramonMod.Pokemon.Dusts;
 
 namespace TerramonMod.Pokemon
 {
@@ -218,15 +219,23 @@ namespace TerramonMod.Pokemon
         {
 			NPC.netUpdate = true;
 			catchable = false;
-			for (int i = 0; i < 32; i++)
+            /*for (int i = 0; i < 32; i++)
 			{
 				var offsetx = Main.rand.NextFloat(NPC.width * -0.5f, NPC.width * 0.5f);
-				var offsety = Main.rand.NextFloat(NPC.height * -0.5f, NPC.height * 0.5f);
+				var offsety = Main.rand.NextFloat(NPC.height * -0.5f, NPC.height * 0.5f);*/
 
-				Dust.NewDust(new Vector2(NPC.position.X + offsetx, NPC.position.Y + offsety), NPC.width, NPC.height, DustID.Cloud);
-			}
+            var dust = ModContent.DustType<summoncloud>();
+            Dust.NewDust(new Vector2(NPC.position.X, NPC.position.Y), NPC.width, NPC.height, dust, 0, 1);
+			Dust.NewDust(new Vector2(NPC.position.X, NPC.position.Y), NPC.width, NPC.height, dust, 0, -1);
+			Dust.NewDust(new Vector2(NPC.position.X, NPC.position.Y), NPC.width, NPC.height, dust, 1, 0);
+			Dust.NewDust(new Vector2(NPC.position.X, NPC.position.Y), NPC.width, NPC.height, dust, -1, 0);
+			Dust.NewDust(new Vector2(NPC.position.X, NPC.position.Y), NPC.width, NPC.height, dust, 0.5f, 0.5f);
+			Dust.NewDust(new Vector2(NPC.position.X, NPC.position.Y), NPC.width, NPC.height, dust, 0.5f, -0.5f);
+			Dust.NewDust(new Vector2(NPC.position.X, NPC.position.Y), NPC.width, NPC.height, dust, -0.5f, 0.5f);
+			Dust.NewDust(new Vector2(NPC.position.X, NPC.position.Y), NPC.width, NPC.height, dust, -0.5f, -0.5f);
+			//}
 			NPC.active = false;
-		}
+        }
 
         /*public override void ModifyHitByProjectile(Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
@@ -236,7 +245,7 @@ namespace TerramonMod.Pokemon
 			hitDirection = 0;
         }*/
 
-		public override void UpdateLifeRegen(ref int damage)
+        public override void UpdateLifeRegen(ref int damage)
 		{
 			NPC.life = NPC.lifeMax;
 		}

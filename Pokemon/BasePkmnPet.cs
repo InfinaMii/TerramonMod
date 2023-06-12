@@ -7,6 +7,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TerramonMod.Pokemon;
 using Terraria.DataStructures;
+using TerramonMod.Pokemon.Dusts;
 
 namespace TerramonMod.Pokemon
 {
@@ -46,6 +47,17 @@ namespace TerramonMod.Pokemon
 				Projectile.position.X -= 36;
 			else
 				Projectile.position.X += 48;
+
+			var dust = ModContent.DustType<summoncloud>();
+			var mainPosition = new Vector2(Projectile.position.X - (Projectile.width / 2), Projectile.position.Y - (Projectile.height / 2));
+			Dust.NewDust(new Vector2(mainPosition.X, mainPosition.Y + 4), Projectile.width, Projectile.height, dust);
+			Dust.NewDust(new Vector2(mainPosition.X, mainPosition.Y - 4), Projectile.width, Projectile.height, dust);
+			Dust.NewDust(new Vector2(mainPosition.X + 4, mainPosition.Y), Projectile.width, Projectile.height, dust);
+			Dust.NewDust(new Vector2(mainPosition.X - 4, mainPosition.Y), Projectile.width, Projectile.height, dust);
+			Dust.NewDust(new Vector2(mainPosition.X + 2, mainPosition.Y + 2), Projectile.width, Projectile.height, dust);
+			Dust.NewDust(new Vector2(mainPosition.X + 2, mainPosition.Y - 2), Projectile.width, Projectile.height, dust);
+			Dust.NewDust(new Vector2(mainPosition.X - 2, mainPosition.Y + 2), Projectile.width, Projectile.height, dust);
+			Dust.NewDust(new Vector2(mainPosition.X - 2, mainPosition.Y - 2), Projectile.width, Projectile.height, dust);
 
 			//Main.NewText(direction, Color.White);
 		}

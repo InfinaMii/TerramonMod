@@ -220,17 +220,6 @@ namespace TerramonMod.Items
         {
 			if (data != null)
 				Main.NewText(data.ToString(), Color.Pink);			
-			else
-			{
-				string msg = "";
-				//data = new PkmnData { pkmn = ModContent.NPCType<CharmeleonNPC>(), level = 16 };
-				foreach (var p in Main.player)
-				{
-					if (p.name != "")
-						msg += $"{p.name}: {p.GetModPlayer<TerramonPlayer>().usePokePet}-{p.GetModPlayer<TerramonPlayer>().usePokeIsShiny}, ";
-				}
-				Main.NewText(msg, Color.MediumPurple);
-			}
 
             return true;
         }
