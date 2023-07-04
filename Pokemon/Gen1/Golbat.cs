@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<GolbatPet>(),
-            evolveInto = "CrobatNPC",
-            evolveAt = 0
+            evolveInto = "GolbatNPC",
+            evolveAt = -1
         };
     }
 

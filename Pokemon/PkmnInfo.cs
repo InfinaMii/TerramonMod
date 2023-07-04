@@ -10,6 +10,7 @@ namespace TerramonMod.Pokemon
 {
     public class PkmnInfo
     {
+        public int gen = 1;
         public string Name = null;
         public PkmnType type1 = PkmnType.normal;
         public PkmnType? type2 = null;

@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<PidgeottoPet>(),
-            evolveInto = "PidgeotNPC",
-            evolveAt = 36
+            evolveInto = "PidgeottoNPC",
+            evolveAt = -1
         };
     }
 

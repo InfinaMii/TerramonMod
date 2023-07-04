@@ -26,7 +26,7 @@ namespace TerramonMod.Pokemon.Gen1
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<GrowlithePet>(),
             evolveInto = "ArcanineNPC",
-            evolveAt = 0
+            evolveAt = 6
         };
     }
 

@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<IvysaurPet>(),
-            evolveInto = "VenusaurNPC",
-            evolveAt = 32
+            evolveInto = "IvysaurNPC",
+            evolveAt = -1
         };
     }
 

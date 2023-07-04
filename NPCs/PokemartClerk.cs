@@ -103,7 +103,7 @@ namespace TerramonMod.NPCs
 		public override List<string> SetNPCNameList()
 		{
 			return new List<string>() {
-				"Someone",
+				"Ash",
 				"Somebody",
 				"Blocky",
 				"Colorless"
@@ -119,12 +119,13 @@ namespace TerramonMod.NPCs
 			WeightedRandom<string> chat = new WeightedRandom<string>();
 			chat.Add("There's a lot of Pokemon out there, but you'll need Poke Balls to catch them! Luckily for you, I have some in stock.");
 			chat.Add("In Johto they have a species of Pokémon called Furrets. They sure do love to walk!");
-			chat.Add("As your journey progresses, I'll offer new things. Check back here every so often.");
+			//chat.Add("As your journey progresses, I'll offer new things. Check back here every so often.");
 			chat.Add("Different Pokémon like living in different places. If you travel around, you may find new Pokemon!");
-			chat.Add("I just got back from my Alola vacation. See my tan lines?");
 			chat.Add("There are many different regions in the world. One day I hope to visit all of them!");
 			chat.Add("I conveniently sell Pokéballs for you to buy, but if you're short of cash you can always make your own using apricorns and iron!");
 			chat.Add("A remake of Mobile Creatures has been announced! Though I'm not sure how I feel about the art style...");
+			chat.Add($"Ever since Pokémon started appearing in {Main.worldName}, I've dedicated my life to helping people care for them properly.");
+			chat.Add("The Pokémon around here seem very peaceful. It's unusual to see creatures geting along so well.");
 
 			return chat; // chat is implicitly cast to a string.
 		}

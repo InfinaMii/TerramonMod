@@ -26,7 +26,7 @@ namespace TerramonMod.Pokemon.Gen1
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<CharizardPet>(),
             evolveInto = "CharizardNPC",
-            evolveAt = 36
+            evolveAt = -1
         };
     }
 

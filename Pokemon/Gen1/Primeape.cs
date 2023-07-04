@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<PrimeapePet>(),
-            evolveInto = "AnnihilapeNPC",
-            evolveAt = 0
+            evolveInto = "PrimeapeNPC",
+            evolveAt = -1
         };
     }
 

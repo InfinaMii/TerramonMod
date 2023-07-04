@@ -26,7 +26,7 @@ namespace TerramonMod.Pokemon.Gen1
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<VenusaurPet>(),
             evolveInto = "VenusaurNPC",
-            evolveAt = 32
+            evolveAt = -1
         };
     }
 

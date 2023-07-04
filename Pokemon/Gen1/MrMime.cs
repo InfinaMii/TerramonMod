@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.fairy,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<MrMimePet>(),
-            evolveInto = "MrRimeNPC",
-            evolveAt = 42
+            evolveInto = "MrMimeNPC",
+            evolveAt = -1
         };
     }
 

@@ -15,7 +15,7 @@ namespace TerramonMod
         [SeparatePage]
         [DefaultValue(false)]
         [Label("Fast Animations")]
-        [Tooltip("Whether to use animations for things like Poke Balls")]
+        [Tooltip("Whether to skip animations for things like Poke Balls")]
         public bool fastAnimations;
         public override void OnChanged()
         {

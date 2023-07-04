@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ground,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<OnixPet>(),
-            evolveInto = "SteelixNPC",
-            evolveAt = 0
+            evolveInto = "OnixNPC",
+            evolveAt = -1
         };
     }
 

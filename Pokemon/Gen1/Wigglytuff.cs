@@ -26,7 +26,7 @@ namespace TerramonMod.Pokemon.Gen1
             captureRate = (float)50 / 255,
             petType = ModContent.ProjectileType<WigglytuffPet>(),
             evolveInto = "WigglytuffNPC",
-            evolveAt = 0
+            evolveAt = -1
         };
     }
 

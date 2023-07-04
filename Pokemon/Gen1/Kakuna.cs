@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<KakunaPet>(),
-            evolveInto = "BeedrillNPC",
-            evolveAt = 10
+            evolveInto = "KakunaNPC",
+            evolveAt = -1
         };
     }
 

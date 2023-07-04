@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.fairy,
             captureRate = (float)170 / 255,
             petType = ModContent.ProjectileType<JigglypuffPet>(),
-            evolveInto = "WigglytuffNPC",
-            evolveAt = 0
+            evolveInto = "JigglypuffNPC",
+            evolveAt = -1
         };
     }
 

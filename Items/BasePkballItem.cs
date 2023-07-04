@@ -81,8 +81,9 @@ namespace TerramonMod.Items
 			if (data != null)
 			{
 				string suffix = data.isShiny ? "_Shiny" : "";
+				string texture = ModContent.GetModProjectile(data.GetInfo().petType).Texture.Replace($"Pokemon/Gen{data.GetInfo().gen}/", "Minisprites/mini");
 
-				Texture2D pokemonSprite = ModContent.Request<Texture2D>($"TerramonMod/Minisprites/mini{data.GetInfo().Name}{suffix}").Value;
+				Texture2D pokemonSprite = ModContent.Request<Texture2D>($"{texture}{suffix}").Value;
 				spriteBatch.Draw(pokemonSprite, new Vector2(position.X - (12 * scale), position.Y - (16 * scale)), null, drawColor, 0f, origin, scale, SpriteEffects.None, 0f);
 			}
 		}

@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<LickitungPet>(),
-            evolveInto = "LickilickyNPC",
-            evolveAt = 0
+            evolveInto = "LickitungNPC",
+            evolveAt = -1
         };
     }
 

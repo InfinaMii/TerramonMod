@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<ScytherPet>(),
-            evolveInto = "ScizorNPC",
-            evolveAt = 0
+            evolveInto = "ScytherNPC",
+            evolveAt = -1
         };
     }
 

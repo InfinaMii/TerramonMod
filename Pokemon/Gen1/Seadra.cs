@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<SeadraPet>(),
-            evolveInto = "KingdraNPC",
-            evolveAt = 0
+            evolveInto = "SeadraNPC",
+            evolveAt = -1
         };
     }
 
