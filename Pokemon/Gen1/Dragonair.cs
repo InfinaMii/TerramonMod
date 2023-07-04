@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<DragonairPet>(),
-            evolveInto = "DragoniteNPC",
-            evolveAt = 55
+            evolveInto = "DragonairNPC",
+            evolveAt = -1
         };
     }
 

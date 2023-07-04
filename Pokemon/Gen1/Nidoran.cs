@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)235 / 255,
             petType = ModContent.ProjectileType<NidoranPet>(),
-            evolveInto = "NidokingNPC",
-            evolveAt = 0
+            evolveInto = "NidorinoNPC",
+            evolveAt = 16
         };
     }
 

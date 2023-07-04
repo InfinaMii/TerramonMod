@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)30 / 255,
             petType = ModContent.ProjectileType<ChanseyPet>(),
-            evolveInto = "BlisseyNPC",
-            evolveAt = 0
+            evolveInto = "ChanseyNPC",
+            evolveAt = -1
         };
     }
 

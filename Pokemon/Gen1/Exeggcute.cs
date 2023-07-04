@@ -26,7 +26,7 @@ namespace TerramonMod.Pokemon.Gen1
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<ExeggcutePet>(),
             evolveInto = "ExeggutorNPC",
-            evolveAt = 0
+            evolveAt = 6
         };
     }
 

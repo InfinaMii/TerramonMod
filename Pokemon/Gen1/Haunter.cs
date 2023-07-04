@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<HaunterPet>(),
-            evolveInto = "GengarNPC",
-            evolveAt = 0
+            evolveInto = "HaunterNPC",
+            evolveAt = -1
         };
     }
 

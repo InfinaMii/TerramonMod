@@ -26,7 +26,7 @@ namespace TerramonMod.Pokemon.Gen1
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<BlastoisePet>(),
             evolveInto = "BlastoiseNPC",
-            evolveAt = 36
+            evolveAt = -1
         };
     }
 

@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<ElectabuzzPet>(),
-            evolveInto = "ElectivireNPC",
-            evolveAt = 0
+            evolveInto = "ElectabuzzNPC",
+            evolveAt = -1
         };
     }
 

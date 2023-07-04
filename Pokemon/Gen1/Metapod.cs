@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<MetapodPet>(),
-            evolveInto = "ButterfreeNPC",
-            evolveAt = 10
+            evolveInto = "MetapodNPC",
+            evolveAt = -1
         };
     }
 

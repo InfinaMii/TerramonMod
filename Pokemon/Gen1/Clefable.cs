@@ -26,7 +26,7 @@ namespace TerramonMod.Pokemon.Gen1
             captureRate = (float)25 / 255,
             petType = ModContent.ProjectileType<ClefablePet>(),
             evolveInto = "ClefableNPC",
-            evolveAt = 0
+            evolveAt = -1
         };
     }
 

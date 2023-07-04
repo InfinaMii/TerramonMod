@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<WartortlePet>(),
-            evolveInto = "BlastoiseNPC",
-            evolveAt = 36
+            evolveInto = "WartortleNPC",
+            evolveAt = -1
         };
     }
 

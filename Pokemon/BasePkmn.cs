@@ -88,33 +88,107 @@ namespace TerramonMod.Pokemon
 			//NPC.dontTakeDamage = true;
 		}
 
-		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			float spawnChance = 0f;
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            float spawnChance = 0f;
 
-			if (wildLevel != 0)
-				return 0;
-
-			if (this.Type == ModContent.NPCType<BasePkmn>())
+            if (wildLevel != 0)
                 return 0;
 
-            switch (info.type1)
+            if (this.Type == ModContent.NPCType<BasePkmn>())
+                return 0;
+
+			spawnChance = GetSpawn(spawnInfo, info.type1) * commodity;
+			if (info.type2.HasValue)
+				spawnChance += GetSpawn(spawnInfo, info.type2.Value) * commodity * 0.5f;
+
+
+			return spawnChance * 0.15f;
+        }
+
+        public int GetSpawn(NPCSpawnInfo spawnInfo, PkmnType type)
+        {
+            switch (type)
             {
                 case PkmnType.fire:
-                    if (spawnInfo.Player.ZoneUnderworldHeight)
-                        spawnChance = commodity;
+                    if (spawnInfo.Player.ZoneUnderworldHeight || spawnInfo.Player.ZoneMeteor)
+                        return 1;
                     break;
                 case PkmnType.normal:
                     if (spawnInfo.Player.ZoneForest)
-                        spawnChance = commodity;
+                        return 1;
                     break;
-					// TODO: add in spawning for more types
-            }
+                case PkmnType.water:
+                    if (spawnInfo.Player.ZoneBeach || spawnInfo.Player.ZoneRain)
+                        return 1;
+                    break;
+                case PkmnType.ghost:
+                    if (spawnInfo.Player.ZoneGraveyard || !Main.dayTime)
+                        return 1;
+                    break;
+                case PkmnType.dark:
+                    if (spawnInfo.Player.ZoneCorrupt || spawnInfo.Player.ZoneCrimson)
+                        return 1;
+                    break;
+                case PkmnType.grass:
+                    if (spawnInfo.Player.ZoneJungle || spawnInfo.Player.ZoneForest)
+                        return 1;
+                    break;
+                case PkmnType.electric:
+                    if (spawnInfo.Player.ZoneRain)
+                        return 1;
+                    break;
+                case PkmnType.ice:
+                    if (spawnInfo.Player.ZoneSnow)
+                        return 1;
+                    break;
+                case PkmnType.fighting:
+                    if (spawnInfo.Player.ZoneMeteor || spawnInfo.Player.ZoneDungeon)
+                        return 1;
+                    break;
+                case PkmnType.poison:
+                    if (spawnInfo.Player.ZoneJungle || spawnInfo.Player.ZoneCorrupt || spawnInfo.Player.ZoneCrimson)
+                        return 1;
+                    break;
+                case PkmnType.ground:
+                    if (spawnInfo.Player.ZoneUndergroundDesert || spawnInfo.Player.ZoneDesert || spawnInfo.Player.ZoneDirtLayerHeight)
+                        return 1;
+                    break;
+                case PkmnType.rock:
+                    if (spawnInfo.Player.ZoneRockLayerHeight || spawnInfo.Player.ZoneMarble || spawnInfo.Player.ZoneMeteor || spawnInfo.Player.ZoneGranite)
+                        return 1;
+                    break;
+                case PkmnType.flying:
+                    if (spawnInfo.Player.ZoneOverworldHeight || spawnInfo.Player.ZoneSkyHeight)
+                        return 1;
+                    break;
+                case PkmnType.psychic:
+                    if (spawnInfo.Player.ZoneGlowshroom || spawnInfo.Player.ZoneGemCave || spawnInfo.Player.ZoneMarble)
+                        return 1;
+                    break;
+                case PkmnType.bug:
+                    if (spawnInfo.Player.ZoneForest || spawnInfo.Player.ZoneJungle || spawnInfo.Player.ZoneRain)
+                        return 1;
+                    break;
+                case PkmnType.dragon:
+                    if (spawnInfo.Player.ZoneSkyHeight || (spawnInfo.Player.ZoneRain && spawnInfo.Player.ZoneHallow))
+                        return 1;
+                    break;
+                case PkmnType.steel:
+                    if (spawnInfo.Player.ZoneGranite || spawnInfo.Player.ZoneUnderworldHeight || spawnInfo.Player.ZoneMeteor)
+                        return 1;
+                    break;
+                case PkmnType.fairy:
+                    if (spawnInfo.Player.ZoneHallow || spawnInfo.Player.ZoneGlowshroom)
+                        return 1;
+                    break;
 
-            return spawnChance * 0.05f;
+                // TODO: make spawning more balanced
+            }
+			return 0;
 		}
 
-		public override void FindFrame(int frameHeight)
+        public override void FindFrame(int frameHeight)
 		{
 			NPC.spriteDirection = NPC.direction;
 			//Main.NewText(Projectile.velocity, Color.Green);

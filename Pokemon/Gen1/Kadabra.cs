@@ -25,8 +25,8 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)100 / 255,
             petType = ModContent.ProjectileType<KadabraPet>(),
-            evolveInto = "AlakazamNPC",
-            evolveAt = 0
+            evolveInto = "KadabraNPC",
+            evolveAt = -1
         };
     }
 
