@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)225 / 255,
             petType = ModContent.ProjectileType<KrabbyPet>(),
-            evolveInto = "KinglerNPC",
-            evolveAt = 28
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 28,
+                    pokemon = "KinglerNPC"
+                }}
         };
     }
 

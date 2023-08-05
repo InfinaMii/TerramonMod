@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<HaunterPet>(),
-            evolveInto = "HaunterNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "LinkCable",
+                    level = null,
+                    pokemon = "GengarNPC"
+                }}
         };
     }
 

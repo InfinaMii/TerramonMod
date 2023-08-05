@@ -15,7 +15,7 @@ namespace TerramonMod.Commands.Developer
 
         public override string Command => "makeshiny";
 
-        public override string Description => "Switches the current pokemon into its Shiny form";
+        public override string Description => "Switches the current pokemon into its Shiny form (DEBUG, DO NOT SHIP)";
 
         public override string Usage => "/levelup";
 

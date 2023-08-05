@@ -18,6 +18,7 @@ namespace TerramonMod
 	public class TerramonMod : Mod
 	{
 		public static bool fastAnimations = false;
+		public static bool fastEvolution = true;
 
 		public enum PkmnType
 		{

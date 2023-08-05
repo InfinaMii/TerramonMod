@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<DiglettPet>(),
-            evolveInto = "DugtrioNPC",
-            evolveAt = 26
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 26,
+                    pokemon = "DugtrioNPC"
+                }}
         };
     }
 

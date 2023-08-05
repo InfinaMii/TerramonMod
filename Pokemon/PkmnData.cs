@@ -17,7 +17,7 @@ namespace TerramonMod.Pokemon
         public bool isShiny = false;
         public int level = 1;
 
-        public void Evolve()
+        /*public void Evolve()
         {
             if (IsEvolveReady() != 1)
                 return;
@@ -36,6 +36,39 @@ namespace TerramonMod.Pokemon
                 return 1;
 
             return 0;
+        }*/
+
+        public bool IsEvolveReady() => GetEvolution() != null;
+
+        public string GetEvolution(string item = null)
+        {
+            var info = GetInfo();
+            if (info.evolutionMethods == null)
+                return null;
+
+            foreach (var evo in info.evolutionMethods)
+            {
+                //if (evo.item != null)
+                    //Main.NewText($"Wanted {item}, found {evo.item}", Color.Red);
+                if (item == evo.item && (evo.level == null || evo.level <= level))
+                {
+                    return evo.pokemon;
+                }
+            }
+            return null;
+        }
+
+        public bool Evolve(string item = null)
+        {
+            var pokemon = GetEvolution(item);
+            if (pokemon == null)
+                return false;
+
+            var name = GetName();
+            pkmn = pokemon;
+            Main.NewText($"Congratulations! Your {name} evolved into {GetInfo().Name}!", Color.Yellow);
+
+            return true;
         }
 
         public bool CanLevelUp()

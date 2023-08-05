@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ice,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<LaprasPet>(),
-            evolveInto = "LaprasNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

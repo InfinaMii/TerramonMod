@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<GloomPet>(),
-            evolveInto = "GloomNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "LeafStone",
+                    level = null,
+                    pokemon = "VileplumeNPC"
+                }}
         };
     }
 

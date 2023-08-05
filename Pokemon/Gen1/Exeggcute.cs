@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.psychic,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<ExeggcutePet>(),
-            evolveInto = "ExeggutorNPC",
-            evolveAt = 6
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "LeafStone",
+                    level = null,
+                    pokemon = "ExeggutorNPC"
+                }}
         };
     }
 

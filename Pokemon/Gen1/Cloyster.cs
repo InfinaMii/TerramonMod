@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ice,
             captureRate = (float)60 / 255,
             petType = ModContent.ProjectileType<CloysterPet>(),
-            evolveInto = "CloysterNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

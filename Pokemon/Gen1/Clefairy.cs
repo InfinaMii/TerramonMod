@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)150 / 255,
             petType = ModContent.ProjectileType<ClefairyPet>(),
-            evolveInto = "ClefairyNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "MoonStone",
+                    level = null,
+                    pokemon = "ClefableNPC"
+                }}
         };
     }
 

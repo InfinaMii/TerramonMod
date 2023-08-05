@@ -11,7 +11,7 @@ using TerramonMod.Pokemon.Dusts;
 
 namespace TerramonMod.Pokemon
 {
-	public class BasePkmnPet : ModProjectile
+	public abstract class BasePkmnPet : ModProjectile
 	{
 		int currentFrame = 0;
 		int frameTimer = 0; //added these because the default ones were being weird T-T
@@ -127,8 +127,8 @@ namespace TerramonMod.Pokemon
 			//frameTimer = 0;
 
 			var tmonPlayer = Main.player[Projectile.owner].GetModPlayer<TerramonPlayer>();
-			if (tmonPlayer.pokeInUse != null && tmonPlayer.pokeInUse.data.IsEvolveReady() == 1)
-            {
+			if (tmonPlayer.pokeInUse != null && tmonPlayer.pokeInUse.data.IsEvolveReady())
+			{
 				if ((int)Main.rand.Next(0, 60) == 0)
 					Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.TreasureSparkle);
 			}

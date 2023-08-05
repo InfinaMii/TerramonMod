@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)225 / 255,
             petType = ModContent.ProjectileType<GoldeenPet>(),
-            evolveInto = "SeakingNPC",
-            evolveAt = 33
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 33,
+                    pokemon = "SeakingNPC"
+                }}
         };
     }
 

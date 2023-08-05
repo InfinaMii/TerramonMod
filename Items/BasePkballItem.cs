@@ -17,7 +17,7 @@ using System;
 
 namespace TerramonMod.Items
 {
-	public class BasePkballItem : ModItem
+	public abstract class BasePkballItem : ModItem
 	{
 		bool preUpdateName = false;
 		public virtual int pokeballThrow => ModContent.ProjectileType<BasePkballProjectile>();

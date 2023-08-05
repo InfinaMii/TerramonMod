@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<SpearowPet>(),
-            evolveInto = "FearowNPC",
-            evolveAt = 20
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 20,
+                    pokemon = "FearowNPC"
+                }}
         };
     }
 

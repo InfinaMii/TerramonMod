@@ -30,21 +30,23 @@ namespace TerramonMod.Commands
             else
             {
                 var info = pokemon.data.GetInfo();
-                var evolveStatus = pokemon.data.IsEvolveReady();
+                var hasEvolved = pokemon.data.Evolve();
 
-                if (evolveStatus == -1)
+                if (!hasEvolved)
                 {
-                    Main.NewText($"{info.Name}s don't evolve into anything!", Color.Red);
-                    return;
+                    if (info.evolutionMethods == null)
+                    {
+                        Main.NewText($"{info.Name}s don't evolve into anything!", Color.Red);
+                        return;
+                    }
+                    else
+                    {
+                        Main.NewText($"Your Pokemon can't evolve yet!", Color.Red);
+                        return;
+                    }
                 }
-                if (evolveStatus == 0)
-                {
-                    Main.NewText($"Your Pokemon isn't a high enough level! (at {pokemon.data.level}, needs to be {info.evolveAt})", Color.Red);
-                    return;
-                }
-
-                pokemon.data.Evolve();
-                pokemon.UpdateName();
+                else
+                    pokemon.UpdateName();
             }
 
         }

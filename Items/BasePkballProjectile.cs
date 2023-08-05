@@ -16,7 +16,7 @@ using TerramonMod.Pokemon;
 
 namespace TerramonMod.Items
 {
-    class BasePkballProjectile : ModProjectile
+    abstract class BasePkballProjectile : ModProjectile
     {
         public virtual int pokeballCapture => ModContent.ItemType<BasePkballItem>();
         public virtual float catchModifier { get; set; }

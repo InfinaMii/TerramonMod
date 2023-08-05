@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.steel,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<MagnemitePet>(),
-            evolveInto = "MagnetonNPC",
-            evolveAt = 30
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 30,
+                    pokemon = "MagnetonNPC"
+                }}
         };
     }
 

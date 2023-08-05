@@ -12,14 +12,16 @@ namespace TerramonMod
     {
         public override ConfigScope Mode => ConfigScope.ServerSide;
 
-        [SeparatePage]
+        //[SeparatePage]
         [DefaultValue(false)]
-        [Label("Fast Animations")]
-        [Tooltip("Whether to skip animations for things like Poke Balls")]
         public bool fastAnimations;
+
+        [DefaultValue(true)]
+        public bool fastEvolution;
         public override void OnChanged()
         {
             TerramonMod.fastAnimations = fastAnimations;
+            TerramonMod.fastEvolution = fastEvolution;
         }
     }
 }

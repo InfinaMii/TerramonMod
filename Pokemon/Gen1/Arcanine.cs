@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<ArcaninePet>(),
-            evolveInto = "ArcanineNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

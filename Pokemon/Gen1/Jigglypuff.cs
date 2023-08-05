@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.fairy,
             captureRate = (float)170 / 255,
             petType = ModContent.ProjectileType<JigglypuffPet>(),
-            evolveInto = "JigglypuffNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "MoonStone",
+                    level = null,
+                    pokemon = "WigglytuffNPC"
+                }}
         };
     }
 

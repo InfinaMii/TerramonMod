@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<ShellderPet>(),
-            evolveInto = "CloysterNPC",
-            evolveAt = 6
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "WaterStone",
+                    level = null,
+                    pokemon = "CloysterNPC"
+                }}
         };
     }
 

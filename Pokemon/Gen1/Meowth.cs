@@ -25,8 +25,19 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<MeowthPet>(),
-            evolveInto = "PersianNPC",
-            evolveAt = 28
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 28,
+                    pokemon = "PersianNPC"
+                },
+                new PkmnEvo
+                {
+                    item = null,
+                    level = null,
+                    pokemon = "PersianNPC"
+                }}
         };
     }
 

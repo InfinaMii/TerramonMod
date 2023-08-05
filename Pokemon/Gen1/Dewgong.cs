@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ice,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<DewgongPet>(),
-            evolveInto = "DewgongNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

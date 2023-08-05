@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)25 / 255,
             petType = ModContent.ProjectileType<SnorlaxPet>(),
-            evolveInto = "SnorlaxNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

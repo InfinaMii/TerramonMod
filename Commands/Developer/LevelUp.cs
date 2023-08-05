@@ -15,7 +15,7 @@ namespace TerramonMod.Commands.Developer
 
         public override string Command => "levelup";
 
-        public override string Description => "Give a nickname to the currently summoned Pokemon.";
+        public override string Description => "Increases the level of the current Pokemon by a given amount (DEBUG, DO NOT SHIP)";
 
         public override string Usage => "/levelup";
 

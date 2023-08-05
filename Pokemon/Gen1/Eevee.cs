@@ -25,8 +25,25 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<EeveePet>(),
-            evolveInto = "VaporeonNPC",
-            evolveAt = 6
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "WaterStone",
+                    level = null,
+                    pokemon = "VaporeonNPC"
+                },
+                new PkmnEvo
+                {
+                    item = "ThunderStone",
+                    level = null,
+                    pokemon = "JolteonNPC"
+                },
+                new PkmnEvo
+                {
+                    item = "FireStone",
+                    level = null,
+                    pokemon = "FlareonNPC"
+                }}
         };
     }
 
