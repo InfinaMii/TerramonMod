@@ -148,8 +148,10 @@ namespace TerramonMod.NPCs
             else
             {
                 var player = Main.LocalPlayer.GetModPlayer<TerramonPlayer>();
-                player.pokeInUse.data.Evolve();
+                var pokeName = player.pokeInUse.data.GetName();
+                player.pokeInUse.data.Evolve(null, false);
                 player.pokeInUse.UpdateName();
+                Main.npcChatText = $"Congratulations! Your {pokeName} evolved into {player.pokeInUse.data.GetInfo().Name}!";
             }
         }
 

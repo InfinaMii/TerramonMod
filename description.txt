@@ -3,6 +3,7 @@ The mod also features:
 - A new NPC who sells you important items such as Pokeballs
 - Rare Candies dropped from bosses to level up and evolve your Pokemon
 - A new Pokemon Trainer costume for you to wear
+- A music box to listen to music with i guess
 
 TODO: make the description better than this -w-
 
@@ -13,7 +14,5 @@ EpicBoi - Team Manager
 InfinaMii - Team Leader, Programmer + Spriter
 KindredTheFox - Programmer
 Salti - Programmer
-gump - Programmer
-Lobster123 - Spriter
-Toderra - Spriter
+Lobsterabyte - Spriter
 Lost5ilver - Musician

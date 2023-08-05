@@ -433,14 +433,9 @@ Configs: {
 			Tooltip: Whether to skip animations for certain events (e.g. catching a pokemon)
 		}
 
-		quickEvolution: {
+		fastEvolution: {
 			Label: Fast Evolution
 			Tooltip: Whether to automatically evolve Pokemon when using Rare Candies (otherwise speak to the Poke Mart Clerk NPC)
-		}
-
-		fastEvolution: {
-			Label: fast Evolution
-			Tooltip: ""
 		}
 	}
 }
