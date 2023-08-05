@@ -11,7 +11,7 @@ namespace TerramonMod.Items.Vanity
 	{
 		public override void SetStaticDefaults() {
 			base.SetStaticDefaults();
-			DisplayName.SetDefault("Pokemon Trainer Jacket");
+			// DisplayName.SetDefault("Pokemon Trainer Jacket");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}

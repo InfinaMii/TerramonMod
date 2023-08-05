@@ -50,8 +50,8 @@ namespace TerramonMod.Pokemon
 
 		public override void SetStaticDefaults()
 		{
-			if (info != null)
-				DisplayName.SetDefault(info.Name);
+			// if (info != null)
+				// DisplayName.SetDefault(info.Name);
 			Main.npcFrameCount[NPC.type] = 2;
 		}
 

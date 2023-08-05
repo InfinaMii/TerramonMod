@@ -23,8 +23,8 @@ namespace TerramonMod.Items.Pokeballs
         public override int igPrice => 800;
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault($"Ultra Ball");
-            Tooltip.SetDefault("An ultra-performance Ball that \npprovides a higher Pokémon catch rate \npthan a Great Ball.");
+            // DisplayName.SetDefault($"Ultra Ball");
+            // Tooltip.SetDefault("An ultra-performance Ball that \npprovides a higher Pokémon catch rate \npthan a Great Ball.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = igPrice / 2; //Amount needed to duplicate them in Journey Mode
         }
     }

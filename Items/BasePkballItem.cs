@@ -27,8 +27,8 @@ namespace TerramonMod.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault($"BasePkball");
-			Tooltip.SetDefault("Throw it to catch a Pokemon!");
+			// DisplayName.SetDefault($"BasePkball");
+			// Tooltip.SetDefault("Throw it to catch a Pokemon!");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99; //Amount of Pokeballs needed to duplicate them in Journey Mode
 		}
 

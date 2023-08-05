@@ -76,7 +76,7 @@ namespace TerramonMod
 		// The examplePet bool is set for that player on every clients computer independently (via the Buff.Update), keeping that data in sync.
 		// ExampleLifeFruits, however might be out of sync. For example, when joining a server, we need to share the exampleLifeFruits variable with all other clients.
 		// In addition, in ExampleUI we have a button that toggles "Non-Stop Party". We need to sync this whenever it changes.
-		public override void clientClone(ModPlayer clientClone)
+		public override void CopyClientState(ModPlayer clientClone)/* tModPorter Suggestion: Replace Item.Clone usages with Item.CopyNetStateTo */
 		{
 			TerramonPlayer clone = clientClone as TerramonPlayer;
 			// Here we would make a backup clone of values that are only correct on the local players Player instance.
