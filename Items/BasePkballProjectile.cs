@@ -208,9 +208,10 @@ namespace TerramonMod.Items
             }
         }
 
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            damage = 0;
+            modifiers.FinalDamage.Scale(0);
+            //damage = 0;
             //if (capture == null)
                 //Main.NewText($"{target.ModNPC != null}, {target.ModNPC is BasePkmn}, {((BasePkmn)target.ModNPC).catchable}");
 

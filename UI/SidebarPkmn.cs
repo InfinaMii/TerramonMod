@@ -60,9 +60,9 @@ namespace TerramonMod.UI
             spriteBatch.Draw(Texture.Value, Position, null, color, 0f, Vector2.Zero, 1, SpriteEffects.None, 0f);
         }
 
-        public override void Click(UIMouseEvent evt)
+        public override void LeftClick(UIMouseEvent evt)
         {
-            base.Click(evt);
+            base.LeftClick(evt);
             var player = Main.LocalPlayer.GetModPlayer<TerramonPlayer>();
             if (player.pokeInUse != null)
             {

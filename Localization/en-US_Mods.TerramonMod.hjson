@@ -1,0 +1,402 @@
+Tiles.MusicBoxCenter.MapEntry: Music Box
+
+Buffs: {
+	PkmnBuff: {
+		DisplayName: Trainer
+		Description: Your Pokemon is following you!
+	}
+}
+
+Items: {
+	RareCandy: {
+		DisplayName: Rare Candy
+		Tooltip: A candy that is packed with energy.\nIt raises the level of a single Pokemon by one.
+	}
+
+	PokeBallItem: {
+		DisplayName: Poke Ball
+		Tooltip: A device for catching wild Pokémon.\nIt is thrown like a ball at the target.
+	}
+
+	GreatBallItem: {
+		DisplayName: Great Ball
+		Tooltip: A good, high-performance Ball that provides a higher Pokémon catch rate than a standard Poké Ball.
+	}
+
+	UltraBallItem: {
+		DisplayName: Ultra Ball Item
+		Tooltip: An ultra-performance Ball that provides a higher Pokémon catch rate than a Great Ball.
+	}
+
+	MasterBallItem: {
+		DisplayName: Master Ball
+		Tooltip: The best Ball with the ultimate level of performance.\nIt will catch any wild Pokémon without fail.
+	}
+
+	PremierBallItem: {
+		DisplayName: Premier Ball
+		Tooltip: A somewhat rare Poké Ball that has been specially made to commemorate an event of some sort.
+	}
+
+	TrainerCap: {
+		DisplayName: Trainer Cap
+		Tooltip: ""
+	}
+
+	TrainerLegs: {
+		DisplayName: Trainer Legs
+		Tooltip: ""
+	}
+
+	TrainerTorso: {
+		DisplayName: Trainer Torso
+		Tooltip: ""
+	}
+
+	MusicItemCenter: {
+		DisplayName: Pokemon Centre Music Box
+		Tooltip: ""
+	}
+
+	BasePkballItem: {
+		Tooltip: ""
+		DisplayName: Base Pkball Item
+	}
+}
+
+NPCs: {
+	PokemartClerk: {
+		DisplayName: Pokemart Clerk
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LoveBiome: I love {BiomeName}.
+			LikeBiome: I like {BiomeName}.
+			DislikeBiome: I dislike {BiomeName}.
+			LoveNPC: I love {NPCName}.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	CharmeleonNPC.DisplayName: Charmeleon N P C
+	ClefableNPC.DisplayName: Clefable N P C
+	ClefairyNPC.DisplayName: Clefairy N P C
+	CloysterNPC.DisplayName: Cloyster N P C
+	CuboneNPC.DisplayName: Cubone N P C
+	DewgongNPC.DisplayName: Dewgong N P C
+	DiglettNPC.DisplayName: Diglett N P C
+	DittoNPC.DisplayName: Ditto N P C
+	DodrioNPC.DisplayName: Dodrio N P C
+	DoduoNPC.DisplayName: Doduo N P C
+	DragonairNPC.DisplayName: Dragonair N P C
+	DragoniteNPC.DisplayName: Dragonite N P C
+	DratiniNPC.DisplayName: Dratini N P C
+	DrowzeeNPC.DisplayName: Drowzee N P C
+	DugtrioNPC.DisplayName: Dugtrio N P C
+	EeveeNPC.DisplayName: Eevee N P C
+	EkansNPC.DisplayName: Ekans N P C
+	ElectabuzzNPC.DisplayName: Electabuzz N P C
+	ElectrodeNPC.DisplayName: Electrode N P C
+	ExeggcuteNPC.DisplayName: Exeggcute N P C
+	ExeggutorNPC.DisplayName: Exeggutor N P C
+	FarfetchdNPC.DisplayName: Farfetchd N P C
+	FearowNPC.DisplayName: Fearow N P C
+	FlareonNPC.DisplayName: Flareon N P C
+	GastlyNPC.DisplayName: Gastly N P C
+	GengarNPC.DisplayName: Gengar N P C
+	GeodudeNPC.DisplayName: Geodude N P C
+	GloomNPC.DisplayName: Gloom N P C
+	GolbatNPC.DisplayName: Golbat N P C
+	GoldeenNPC.DisplayName: Goldeen N P C
+	GolduckNPC.DisplayName: Golduck N P C
+	GolemNPC.DisplayName: Golem N P C
+	GravelerNPC.DisplayName: Graveler N P C
+	GrimerNPC.DisplayName: Grimer N P C
+	GrowlitheNPC.DisplayName: Growlithe N P C
+	GyaradosNPC.DisplayName: Gyarados N P C
+	HaunterNPC.DisplayName: Haunter N P C
+	HitmonchanNPC.DisplayName: Hitmonchan N P C
+	HitmonleeNPC.DisplayName: Hitmonlee N P C
+	HorseaNPC.DisplayName: Horsea N P C
+	HypnoNPC.DisplayName: Hypno N P C
+	IvysaurNPC.DisplayName: Ivysaur N P C
+	JigglypuffNPC.DisplayName: Jigglypuff N P C
+	JolteonNPC.DisplayName: Jolteon N P C
+	JynxNPC.DisplayName: Jynx N P C
+	KabutoNPC.DisplayName: Kabuto N P C
+	KabutopsNPC.DisplayName: Kabutops N P C
+	KadabraNPC.DisplayName: Kadabra N P C
+	KakunaNPC.DisplayName: Kakuna N P C
+	KangaskhanNPC.DisplayName: Kangaskhan N P C
+	KinglerNPC.DisplayName: Kingler N P C
+	KoffingNPC.DisplayName: Koffing N P C
+	KrabbyNPC.DisplayName: Krabby N P C
+	LaprasNPC.DisplayName: Lapras N P C
+	LickitungNPC.DisplayName: Lickitung N P C
+	MachampNPC.DisplayName: Machamp N P C
+	MachokeNPC.DisplayName: Machoke N P C
+	MachopNPC.DisplayName: Machop N P C
+	MagikarpNPC.DisplayName: Magikarp N P C
+	MagmarNPC.DisplayName: Magmar N P C
+	MagnemiteNPC.DisplayName: Magnemite N P C
+	MagnetonNPC.DisplayName: Magneton N P C
+	MankeyNPC.DisplayName: Mankey N P C
+	MarowakNPC.DisplayName: Marowak N P C
+	MeowthNPC.DisplayName: Meowth N P C
+	MetapodNPC.DisplayName: Metapod N P C
+	MrMimeNPC.DisplayName: Mr Mime N P C
+	MukNPC.DisplayName: Muk N P C
+	NidokingNPC.DisplayName: Nidoking N P C
+	NidoqueenNPC.DisplayName: Nidoqueen N P C
+	NidoranNPC.DisplayName: Nidoran N P C
+	NidorinaNPC.DisplayName: Nidorina N P C
+	NidorinoNPC.DisplayName: Nidorino N P C
+	NinetalesNPC.DisplayName: Ninetales N P C
+	OddishNPC.DisplayName: Oddish N P C
+	OmanyteNPC.DisplayName: Omanyte N P C
+	OmastarNPC.DisplayName: Omastar N P C
+	OnixNPC.DisplayName: Onix N P C
+	ParasectNPC.DisplayName: Parasect N P C
+	ParasNPC.DisplayName: Paras N P C
+	PersianNPC.DisplayName: Persian N P C
+	PidgeotNPC.DisplayName: Pidgeot N P C
+	PidgeottoNPC.DisplayName: Pidgeotto N P C
+	PidgeyNPC.DisplayName: Pidgey N P C
+	PikachuNPC.DisplayName: Pikachu N P C
+	PinsirNPC.DisplayName: Pinsir N P C
+	PoliwagNPC.DisplayName: Poliwag N P C
+	PoliwhirlNPC.DisplayName: Poliwhirl N P C
+	PoliwrathNPC.DisplayName: Poliwrath N P C
+	PonytaNPC.DisplayName: Ponyta N P C
+	PorygonNPC.DisplayName: Porygon N P C
+	PrimeapeNPC.DisplayName: Primeape N P C
+	PsyduckNPC.DisplayName: Psyduck N P C
+	RaichuNPC.DisplayName: Raichu N P C
+	RapidashNPC.DisplayName: Rapidash N P C
+	RaticateNPC.DisplayName: Raticate N P C
+	RattataNPC.DisplayName: Rattata N P C
+	RhydonNPC.DisplayName: Rhydon N P C
+	RhyhornNPC.DisplayName: Rhyhorn N P C
+	SandshrewNPC.DisplayName: Sandshrew N P C
+	SandslashNPC.DisplayName: Sandslash N P C
+	ScytherNPC.DisplayName: Scyther N P C
+	SeadraNPC.DisplayName: Seadra N P C
+	SeakingNPC.DisplayName: Seaking N P C
+	SeelNPC.DisplayName: Seel N P C
+	ShellderNPC.DisplayName: Shellder N P C
+	SlowbroNPC.DisplayName: Slowbro N P C
+	SlowpokeNPC.DisplayName: Slowpoke N P C
+	SnorlaxNPC.DisplayName: Snorlax N P C
+	SpearowNPC.DisplayName: Spearow N P C
+	SquirtleNPC.DisplayName: Squirtle N P C
+	StarmieNPC.DisplayName: Starmie N P C
+	StaryuNPC.DisplayName: Staryu N P C
+	TangelaNPC.DisplayName: Tangela N P C
+	TaurosNPC.DisplayName: Tauros N P C
+	TentacoolNPC.DisplayName: Tentacool N P C
+	TentacruelNPC.DisplayName: Tentacruel N P C
+	VaporeonNPC.DisplayName: Vaporeon N P C
+	VenomothNPC.DisplayName: Venomoth N P C
+	VenonatNPC.DisplayName: Venonat N P C
+	VenusaurNPC.DisplayName: Venusaur N P C
+	VictreebelNPC.DisplayName: Victreebel N P C
+	VileplumeNPC.DisplayName: Vileplume N P C
+	VoltorbNPC.DisplayName: Voltorb N P C
+	VulpixNPC.DisplayName: Vulpix N P C
+	WartortleNPC.DisplayName: Wartortle N P C
+	WeedleNPC.DisplayName: Weedle N P C
+	WeepinbellNPC.DisplayName: Weepinbell N P C
+	WeezingNPC.DisplayName: Weezing N P C
+	WigglytuffNPC.DisplayName: Wigglytuff N P C
+	ZubatNPC.DisplayName: Zubat N P C
+	CharmanderNPC.DisplayName: Charmander N P C
+	CharizardNPC.DisplayName: Charizard N P C
+	ChanseyNPC.DisplayName: Chansey N P C
+	CaterpieNPC.DisplayName: Caterpie N P C
+	ButterfreeNPC.DisplayName: Butterfree N P C
+	BulbasaurNPC.DisplayName: Bulbasaur N P C
+	BlastoiseNPC.DisplayName: Blastoise N P C
+	BellsproutNPC.DisplayName: Bellsprout N P C
+	BeedrillNPC.DisplayName: Beedrill N P C
+	ArcanineNPC.DisplayName: Arcanine N P C
+	ArbokNPC.DisplayName: Arbok N P C
+	AlakazamNPC.DisplayName: Alakazam N P C
+	AerodactylNPC.DisplayName: Aerodactyl N P C
+	AbraNPC.DisplayName: Abra N P C
+	BasePkmn.DisplayName: Base Pkmn
+}
+
+Projectiles: {
+	GreatBallProjectile.DisplayName: Great Ball
+	MasterBallProjectile.DisplayName: Master Ball
+	PokeBallProjectile.DisplayName: Poke Ball
+	PremierBallProjectile.DisplayName: Premier Ball
+	UltraBallProjectile.DisplayName: Ultra Ball
+	BasePkballProjectile.DisplayName: Base Pkball Projectile
+	BasePkmnPet.DisplayName: Base Pkmn Pet
+	AbraPet.DisplayName: Abra Pet
+	AerodactylPet.DisplayName: Aerodactyl Pet
+	AlakazamPet.DisplayName: Alakazam Pet
+	ArbokPet.DisplayName: Arbok Pet
+	ArcaninePet.DisplayName: Arcanine Pet
+	BeedrillPet.DisplayName: Beedrill Pet
+	BellsproutPet.DisplayName: Bellsprout Pet
+	BlastoisePet.DisplayName: Blastoise Pet
+	BulbasaurPet.DisplayName: Bulbasaur Pet
+	ButterfreePet.DisplayName: Butterfree Pet
+	CaterpiePet.DisplayName: Caterpie Pet
+	ChanseyPet.DisplayName: Chansey Pet
+	CharizardPet.DisplayName: Charizard Pet
+	CharmanderPet.DisplayName: Charmander Pet
+	CharmeleonPet.DisplayName: Charmeleon Pet
+	ClefablePet.DisplayName: Clefable Pet
+	ClefairyPet.DisplayName: Clefairy Pet
+	CloysterPet.DisplayName: Cloyster Pet
+	CubonePet.DisplayName: Cubone Pet
+	DewgongPet.DisplayName: Dewgong Pet
+	DiglettPet.DisplayName: Diglett Pet
+	DittoPet.DisplayName: Ditto Pet
+	DodrioPet.DisplayName: Dodrio Pet
+	DoduoPet.DisplayName: Doduo Pet
+	DragonairPet.DisplayName: Dragonair Pet
+	DragonitePet.DisplayName: Dragonite Pet
+	DratiniPet.DisplayName: Dratini Pet
+	DrowzeePet.DisplayName: Drowzee Pet
+	DugtrioPet.DisplayName: Dugtrio Pet
+	EeveePet.DisplayName: Eevee Pet
+	EkansPet.DisplayName: Ekans Pet
+	ElectabuzzPet.DisplayName: Electabuzz Pet
+	ElectrodePet.DisplayName: Electrode Pet
+	ExeggcutePet.DisplayName: Exeggcute Pet
+	ExeggutorPet.DisplayName: Exeggutor Pet
+	FarfetchdPet.DisplayName: Farfetchd Pet
+	FearowPet.DisplayName: Fearow Pet
+	FlareonPet.DisplayName: Flareon Pet
+	GastlyPet.DisplayName: Gastly Pet
+	GengarPet.DisplayName: Gengar Pet
+	GeodudePet.DisplayName: Geodude Pet
+	GloomPet.DisplayName: Gloom Pet
+	GolbatPet.DisplayName: Golbat Pet
+	GoldeenPet.DisplayName: Goldeen Pet
+	GolduckPet.DisplayName: Golduck Pet
+	GolemPet.DisplayName: Golem Pet
+	GravelerPet.DisplayName: Graveler Pet
+	GrimerPet.DisplayName: Grimer Pet
+	GrowlithePet.DisplayName: Growlithe Pet
+	GyaradosPet.DisplayName: Gyarados Pet
+	HaunterPet.DisplayName: Haunter Pet
+	HitmonchanPet.DisplayName: Hitmonchan Pet
+	HitmonleePet.DisplayName: Hitmonlee Pet
+	HorseaPet.DisplayName: Horsea Pet
+	HypnoPet.DisplayName: Hypno Pet
+	IvysaurPet.DisplayName: Ivysaur Pet
+	JigglypuffPet.DisplayName: Jigglypuff Pet
+	JolteonPet.DisplayName: Jolteon Pet
+	JynxPet.DisplayName: Jynx Pet
+	KabutoPet.DisplayName: Kabuto Pet
+	KabutopsPet.DisplayName: Kabutops Pet
+	KadabraPet.DisplayName: Kadabra Pet
+	KakunaPet.DisplayName: Kakuna Pet
+	KangaskhanPet.DisplayName: Kangaskhan Pet
+	KinglerPet.DisplayName: Kingler Pet
+	KoffingPet.DisplayName: Koffing Pet
+	KrabbyPet.DisplayName: Krabby Pet
+	LaprasPet.DisplayName: Lapras Pet
+	LickitungPet.DisplayName: Lickitung Pet
+	MachampPet.DisplayName: Machamp Pet
+	MachokePet.DisplayName: Machoke Pet
+	MachopPet.DisplayName: Machop Pet
+	MagikarpPet.DisplayName: Magikarp Pet
+	MagmarPet.DisplayName: Magmar Pet
+	MagnemitePet.DisplayName: Magnemite Pet
+	MagnetonPet.DisplayName: Magneton Pet
+	MankeyPet.DisplayName: Mankey Pet
+	MarowakPet.DisplayName: Marowak Pet
+	MeowthPet.DisplayName: Meowth Pet
+	MetapodPet.DisplayName: Metapod Pet
+	MrMimePet.DisplayName: Mr Mime Pet
+	MukPet.DisplayName: Muk Pet
+	NidokingPet.DisplayName: Nidoking Pet
+	NidoqueenPet.DisplayName: Nidoqueen Pet
+	NidoranPet.DisplayName: Nidoran Pet
+	NidorinaPet.DisplayName: Nidorina Pet
+	NidorinoPet.DisplayName: Nidorino Pet
+	NinetalesPet.DisplayName: Ninetales Pet
+	OddishPet.DisplayName: Oddish Pet
+	OmanytePet.DisplayName: Omanyte Pet
+	OmastarPet.DisplayName: Omastar Pet
+	OnixPet.DisplayName: Onix Pet
+	ParasectPet.DisplayName: Parasect Pet
+	ParasPet.DisplayName: Paras Pet
+	PersianPet.DisplayName: Persian Pet
+	PidgeotPet.DisplayName: Pidgeot Pet
+	PidgeottoPet.DisplayName: Pidgeotto Pet
+	PidgeyPet.DisplayName: Pidgey Pet
+	PikachuPet.DisplayName: Pikachu Pet
+	PinsirPet.DisplayName: Pinsir Pet
+	PoliwagPet.DisplayName: Poliwag Pet
+	PoliwhirlPet.DisplayName: Poliwhirl Pet
+	PoliwrathPet.DisplayName: Poliwrath Pet
+	PonytaPet.DisplayName: Ponyta Pet
+	PorygonPet.DisplayName: Porygon Pet
+	PrimeapePet.DisplayName: Primeape Pet
+	PsyduckPet.DisplayName: Psyduck Pet
+	RaichuPet.DisplayName: Raichu Pet
+	RapidashPet.DisplayName: Rapidash Pet
+	RaticatePet.DisplayName: Raticate Pet
+	RattataPet.DisplayName: Rattata Pet
+	RhydonPet.DisplayName: Rhydon Pet
+	RhyhornPet.DisplayName: Rhyhorn Pet
+	SandshrewPet.DisplayName: Sandshrew Pet
+	SandslashPet.DisplayName: Sandslash Pet
+	ScytherPet.DisplayName: Scyther Pet
+	SeadraPet.DisplayName: Seadra Pet
+	SeakingPet.DisplayName: Seaking Pet
+	SeelPet.DisplayName: Seel Pet
+	ShellderPet.DisplayName: Shellder Pet
+	SlowbroPet.DisplayName: Slowbro Pet
+	SlowpokePet.DisplayName: Slowpoke Pet
+	SnorlaxPet.DisplayName: Snorlax Pet
+	SpearowPet.DisplayName: Spearow Pet
+	SquirtlePet.DisplayName: Squirtle Pet
+	StarmiePet.DisplayName: Starmie Pet
+	StaryuPet.DisplayName: Staryu Pet
+	TangelaPet.DisplayName: Tangela Pet
+	TaurosPet.DisplayName: Tauros Pet
+	TentacoolPet.DisplayName: Tentacool Pet
+	TentacruelPet.DisplayName: Tentacruel Pet
+	VaporeonPet.DisplayName: Vaporeon Pet
+	VenomothPet.DisplayName: Venomoth Pet
+	VenonatPet.DisplayName: Venonat Pet
+	VenusaurPet.DisplayName: Venusaur Pet
+	VictreebelPet.DisplayName: Victreebel Pet
+	VileplumePet.DisplayName: Vileplume Pet
+	VoltorbPet.DisplayName: Voltorb Pet
+	VulpixPet.DisplayName: Vulpix Pet
+	WartortlePet.DisplayName: Wartortle Pet
+	WeedlePet.DisplayName: Weedle Pet
+	WeepinbellPet.DisplayName: Weepinbell Pet
+	WeezingPet.DisplayName: Weezing Pet
+	WigglytuffPet.DisplayName: Wigglytuff Pet
+	ZubatPet.DisplayName: Zubat Pet
+}
+
+Configs: {
+	TerramonConfig: {
+		DisplayName: Terramon Settings
+
+		fastAnimations: {
+			Label: Fast Animations
+			Tooltip: Whether to skip animations for certain events (e.g. catching a pokemon)
+		}
+	}
+}

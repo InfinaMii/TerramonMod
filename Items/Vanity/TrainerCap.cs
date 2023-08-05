@@ -11,7 +11,7 @@ namespace TerramonMod.Items.Vanity
 	{
 		public override void SetStaticDefaults() {
 			base.SetStaticDefaults();
-			DisplayName.SetDefault("Pokemon Trainer Cap");
+			// DisplayName.SetDefault("Pokemon Trainer Cap");
 			ArmorIDs.Head.Sets.DrawHatHair[Item.headSlot] = true;
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

@@ -23,8 +23,8 @@ namespace TerramonMod.Items.Pokeballs
         public override int pokeballThrow => ModContent.ProjectileType<MasterBallProjectile>();
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault($"Master Ball");
-            Tooltip.SetDefault("The best Ball with the ultimate \nlevel of performance. It will catch any \nwild Pokémon without fail.");
+            // DisplayName.SetDefault($"Master Ball");
+            // Tooltip.SetDefault("The best Ball with the ultimate \nlevel of performance. It will catch any \nwild Pokémon without fail.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = igPrice / 2; //Amount needed to duplicate them in Journey Mode
         }
     }

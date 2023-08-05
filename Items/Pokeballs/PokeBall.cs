@@ -23,8 +23,8 @@ namespace TerramonMod.Items.Pokeballs
         public override int igPrice => 200;
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault($"Poké Ball");
-            Tooltip.SetDefault("A device for catching wild Pokémon.\nIt is thrown like a ball at the target.");
+            // DisplayName.SetDefault($"Poké Ball");
+            // Tooltip.SetDefault("A device for catching wild Pokémon.\nIt is thrown like a ball at the target.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = igPrice / 2; //Amount needed to duplicate them in Journey Mode
         }
     }
