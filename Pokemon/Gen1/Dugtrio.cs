@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)50 / 255,
             petType = ModContent.ProjectileType<DugtrioPet>(),
-            evolveInto = "DugtrioNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

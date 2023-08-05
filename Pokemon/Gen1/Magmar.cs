@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<MagmarPet>(),
-            evolveInto = "MagmarNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

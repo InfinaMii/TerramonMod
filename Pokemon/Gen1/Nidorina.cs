@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<NidorinaPet>(),
-            evolveInto = "NidorinaNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "MoonStone",
+                    level = null,
+                    pokemon = "NidoqueenNPC"
+                }}
         };
     }
 

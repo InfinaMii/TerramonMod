@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<PikachuPet>(),
-            evolveInto = "PikachuNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "ThunderStone",
+                    level = null,
+                    pokemon = "RaichuNPC"
+                }}
         };
     }
 

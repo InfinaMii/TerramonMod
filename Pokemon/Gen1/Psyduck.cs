@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<PsyduckPet>(),
-            evolveInto = "GolduckNPC",
-            evolveAt = 33
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 33,
+                    pokemon = "GolduckNPC"
+                }}
         };
     }
 

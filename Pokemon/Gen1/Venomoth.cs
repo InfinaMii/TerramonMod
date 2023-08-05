@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<VenomothPet>(),
-            evolveInto = "VenomothNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

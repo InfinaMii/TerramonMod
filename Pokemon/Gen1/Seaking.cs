@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)60 / 255,
             petType = ModContent.ProjectileType<SeakingPet>(),
-            evolveInto = "SeakingNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

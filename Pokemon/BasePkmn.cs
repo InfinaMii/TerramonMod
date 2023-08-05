@@ -17,7 +17,7 @@ using TerramonMod.Pokemon.Dusts;
 
 namespace TerramonMod.Pokemon
 {
-    class BasePkmn : ModNPC
+    abstract class BasePkmn : ModNPC
     {
 		public virtual PkmnInfo info => null;
 		public virtual int wildLevel => 0;

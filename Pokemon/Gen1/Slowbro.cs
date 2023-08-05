@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.psychic,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<SlowbroPet>(),
-            evolveInto = "SlowbroNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

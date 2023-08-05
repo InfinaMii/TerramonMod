@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<AerodactylPet>(),
-            evolveInto = "AerodactylNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

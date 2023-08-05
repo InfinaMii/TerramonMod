@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)200 / 255,
             petType = ModContent.ProjectileType<AbraPet>(),
-            evolveInto = "KadabraNPC",
-            evolveAt = 16
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 16,
+                    pokemon = "KadabraNPC"
+                }}
         };
     }
 

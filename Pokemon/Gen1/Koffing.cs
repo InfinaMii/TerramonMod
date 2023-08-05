@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<KoffingPet>(),
-            evolveInto = "WeezingNPC",
-            evolveAt = 35
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 35,
+                    pokemon = "WeezingNPC"
+                }}
         };
     }
 

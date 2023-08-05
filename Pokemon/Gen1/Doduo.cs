@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.flying,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<DoduoPet>(),
-            evolveInto = "DodrioNPC",
-            evolveAt = 31
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 31,
+                    pokemon = "DodrioNPC"
+                }}
         };
     }
 

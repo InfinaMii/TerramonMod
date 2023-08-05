@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.grass,
             captureRate = (float)75 / 255,
             petType = ModContent.ProjectileType<ParasectPet>(),
-            evolveInto = "ParasectNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

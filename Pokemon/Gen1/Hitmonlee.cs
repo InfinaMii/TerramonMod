@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<HitmonleePet>(),
-            evolveInto = "HitmonleeNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

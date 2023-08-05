@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)225 / 255,
             petType = ModContent.ProjectileType<HorseaPet>(),
-            evolveInto = "SeadraNPC",
-            evolveAt = 32
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 32,
+                    pokemon = "SeadraNPC"
+                }}
         };
     }
 

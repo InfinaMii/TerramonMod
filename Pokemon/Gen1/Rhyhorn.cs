@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.rock,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<RhyhornPet>(),
-            evolveInto = "RhydonNPC",
-            evolveAt = 42
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 42,
+                    pokemon = "RhydonNPC"
+                }}
         };
     }
 

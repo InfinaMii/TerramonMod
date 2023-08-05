@@ -24,6 +24,8 @@ namespace TerramonMod
 		public int usePokePet = -1;
 		public bool usePokeIsShiny = false;
 
+		public int premierBonusCount = 0;
+
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
             if (mediumCoreDeath)
@@ -68,15 +70,26 @@ namespace TerramonMod
 				usePokePet = -1;
 		}
 
-		// In MP, other clients need accurate information about your player or else bugs happen.
-		// clientClone, SyncPlayer, and SendClientChanges, ensure that information is correct.
-		// We only need to do this for data that is changed by code not executed by all clients, 
-		// or data that needs to be shared while joining a world.
-		// For example, examplePet doesn't need to be synced because all clients know that the player is wearing the ExamplePet item in an equipment slot. 
-		// The examplePet bool is set for that player on every clients computer independently (via the Buff.Update), keeping that data in sync.
-		// ExampleLifeFruits, however might be out of sync. For example, when joining a server, we need to share the exampleLifeFruits variable with all other clients.
-		// In addition, in ExampleUI we have a button that toggles "Non-Stop Party". We need to sync this whenever it changes.
-		public override void CopyClientState(ModPlayer clientClone)/* tModPorter Suggestion: Replace Item.Clone usages with Item.CopyNetStateTo */
+        public override void PostBuyItem(NPC vendor, Item[] shopInventory, Item item)
+        {
+			if (item.type == ModContent.ItemType<PokeBallItem>())
+				premierBonusCount++;
+			if (premierBonusCount == 10)
+			{
+				Player.QuickSpawnItem(Player.GetSource_GiftOrReward(), ModContent.ItemType<PremierBallItem>());
+				premierBonusCount = 0;
+			}
+        }
+
+        // In MP, other clients need accurate information about your player or else bugs happen.
+        // clientClone, SyncPlayer, and SendClientChanges, ensure that information is correct.
+        // We only need to do this for data that is changed by code not executed by all clients, 
+        // or data that needs to be shared while joining a world.
+        // For example, examplePet doesn't need to be synced because all clients know that the player is wearing the ExamplePet item in an equipment slot. 
+        // The examplePet bool is set for that player on every clients computer independently (via the Buff.Update), keeping that data in sync.
+        // ExampleLifeFruits, however might be out of sync. For example, when joining a server, we need to share the exampleLifeFruits variable with all other clients.
+        // In addition, in ExampleUI we have a button that toggles "Non-Stop Party". We need to sync this whenever it changes.
+        public override void CopyClientState(ModPlayer clientClone)/* tModPorter Suggestion: Replace Item.Clone usages with Item.CopyNetStateTo */
 		{
 			TerramonPlayer clone = clientClone as TerramonPlayer;
 			// Here we would make a backup clone of values that are only correct on the local players Player instance.

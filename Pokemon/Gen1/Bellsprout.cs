@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.poison,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<BellsproutPet>(),
-            evolveInto = "WeepinbellNPC",
-            evolveAt = 21
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 21,
+                    pokemon = "WeepinbellNPC"
+                }}
         };
     }
 

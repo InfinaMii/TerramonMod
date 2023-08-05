@@ -113,7 +113,7 @@ namespace TerramonMod.NPCs
         public override string GetChat()
         {
             var player = Main.LocalPlayer.GetModPlayer<TerramonPlayer>();
-            if (player.pokeInUse != null && player.pokeInUse.data.IsEvolveReady() == 1)
+            if (player.pokeInUse != null && player.pokeInUse.data.IsEvolveReady())
                 return $"Oh? It look's like {player.pokeInUse.data.GetName()} is ready to evolve.";
 
             WeightedRandom<string> chat = new WeightedRandom<string>();
@@ -135,13 +135,16 @@ namespace TerramonMod.NPCs
             button = Language.GetTextValue("LegacyInterface.28");
 
             var player = Main.LocalPlayer.GetModPlayer<TerramonPlayer>();
-            if (player.pokeInUse != null && player.pokeInUse.data.IsEvolveReady() == 1)
+            if (player.pokeInUse != null && player.pokeInUse.data.IsEvolveReady())
                 button2 = "Evolve";
         }
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
-				shopName = "Shop";
+            {
+                Main.LocalPlayer.GetModPlayer<TerramonPlayer>().premierBonusCount = 0;
+                shopName = "Shop";
+            }
             else
             {
                 var player = Main.LocalPlayer.GetModPlayer<TerramonPlayer>();
@@ -159,6 +162,7 @@ namespace TerramonMod.NPCs
 
             npcShop.Register(); // Name of this shop tab
         }
+
 
         // Make this Town NPC teleport to the King and/or Queen statue when triggered.
         public override bool CanGoToStatue(bool toKingStatue) => true;

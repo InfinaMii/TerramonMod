@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)90 / 255,
             petType = ModContent.ProjectileType<MachokePet>(),
-            evolveInto = "MachokeNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "LinkCable",
+                    level = null,
+                    pokemon = "MachampNPC"
+                }}
         };
     }
 

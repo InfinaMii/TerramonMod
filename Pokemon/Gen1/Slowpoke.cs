@@ -25,8 +25,19 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.psychic,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<SlowpokePet>(),
-            evolveInto = "SlowbroNPC",
-            evolveAt = 37
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 37,
+                    pokemon = "SlowbroNPC"
+                },
+                new PkmnEvo
+                {
+                    item = "GalaricaCuff",
+                    level = null,
+                    pokemon = "SlowbroNPC"
+                }}
         };
     }
 

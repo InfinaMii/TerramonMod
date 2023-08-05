@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.water,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<KabutoPet>(),
-            evolveInto = "KabutopsNPC",
-            evolveAt = 40
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 40,
+                    pokemon = "KabutopsNPC"
+                }}
         };
     }
 

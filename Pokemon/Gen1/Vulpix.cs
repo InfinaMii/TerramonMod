@@ -25,8 +25,19 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<VulpixPet>(),
-            evolveInto = "NinetalesNPC",
-            evolveAt = 6
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "FireStone",
+                    level = null,
+                    pokemon = "NinetalesNPC"
+                },
+                new PkmnEvo
+                {
+                    item = "IceStone",
+                    level = null,
+                    pokemon = "NinetalesNPC"
+                }}
         };
     }
 

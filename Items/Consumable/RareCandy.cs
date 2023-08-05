@@ -57,6 +57,16 @@ namespace TerramonMod.Items.Consumable
             pkmn.data.LevelUp();
             SoundEngine.PlaySound(SoundID.Item29 with { Volume = 0.5f }, player.position);
             Main.NewText($"{pkmn.data.GetName()} is now Level {pkmn.data.level}!", Color.Yellow);
+
+            if (TerramonMod.fastEvolution)
+            {
+                if (pkmn.data.Evolve())
+                pkmn.UpdateName();
+            }
+            else
+                if (pkmn.data.IsEvolveReady())
+                Main.NewText($"{pkmn.data.GetName()} is ready to evolve!", Color.Yellow);
+
             return true;
         }
 

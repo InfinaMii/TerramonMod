@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.ground,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<GravelerPet>(),
-            evolveInto = "GravelerNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "LinkCable",
+                    level = null,
+                    pokemon = "GolemNPC"
+                }}
         };
     }
 

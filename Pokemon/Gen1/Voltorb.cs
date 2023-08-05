@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<VoltorbPet>(),
-            evolveInto = "ElectrodeNPC",
-            evolveAt = 30
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 30,
+                    pokemon = "ElectrodeNPC"
+                }}
         };
     }
 

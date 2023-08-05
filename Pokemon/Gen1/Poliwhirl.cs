@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)120 / 255,
             petType = ModContent.ProjectileType<PoliwhirlPet>(),
-            evolveInto = "PoliwhirlNPC",
-            evolveAt = -1
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "WaterStone",
+                    level = null,
+                    pokemon = "PoliwrathNPC"
+                }}
         };
     }
 

@@ -18,19 +18,13 @@ namespace TerramonMod.Pokemon
         public int petType = -1;
         public float captureRate = 0;
         public int evolveAt = -1;
+        public PkmnEvo[] evolutionMethods;
+    }
 
-        /*public string GetFileName()
-        {
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < Name.Length; i++)
-            {
-                if ((Name[i] >= 'A' && Name[i] <= 'z')) //Only add character to string if it's a letter (no spaces/special characters)
-                {
-                    sb.Append(Name[i]);
-                }
-            }
-
-            return sb.ToString();
-        }*/
+    public class PkmnEvo
+    {
+        public string pokemon = null;
+        public int? level = null;
+        public string item = null;
     }
 }

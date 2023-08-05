@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)225 / 255,
             petType = ModContent.ProjectileType<StaryuPet>(),
-            evolveInto = "StarmieNPC",
-            evolveAt = 6
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = "WaterStone",
+                    level = null,
+                    pokemon = "StarmieNPC"
+                }}
         };
     }
 

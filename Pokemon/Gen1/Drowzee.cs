@@ -25,8 +25,13 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)190 / 255,
             petType = ModContent.ProjectileType<DrowzeePet>(),
-            evolveInto = "HypnoNPC",
-            evolveAt = 26
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 26,
+                    pokemon = "HypnoNPC"
+                }}
         };
     }
 

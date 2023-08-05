@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.psychic,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<JynxPet>(),
-            evolveInto = "JynxNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

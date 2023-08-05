@@ -25,8 +25,7 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = PkmnType.water,
             captureRate = (float)45 / 255,
             petType = ModContent.ProjectileType<OmastarPet>(),
-            evolveInto = "OmastarNPC",
-            evolveAt = -1
+            evolutionMethods = null
         };
     }
 

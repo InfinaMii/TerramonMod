@@ -25,8 +25,19 @@ namespace TerramonMod.Pokemon.Gen1
             type2 = null,
             captureRate = (float)255 / 255,
             petType = ModContent.ProjectileType<RattataPet>(),
-            evolveInto = "RaticateNPC",
-            evolveAt = 20
+            evolutionMethods = new PkmnEvo[] {
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 20,
+                    pokemon = "RaticateNPC"
+                },
+                new PkmnEvo
+                {
+                    item = null,
+                    level = 20,
+                    pokemon = "RaticateNPC"
+                }}
         };
     }
 
