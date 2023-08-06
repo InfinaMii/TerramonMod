@@ -53,8 +53,23 @@ namespace TerramonMod
 			if (Main.LocalPlayer == Player) //Only change these values if they belong to this client (other clients' pokeInUse for this player always null)
 			{
 				UpdatePkmn();
-			}	
-		}
+
+                if (premierBonusCount > 0 && Main.npcShop == 0)
+                {
+                    int premierBonus = premierBonusCount / 10;
+					if (premierBonus > 0)
+					{
+						if (premierBonus == 1)
+							Main.NewText($"You got a Premier Ball as an added bonus!", Color.Yellow);
+						else
+							Main.NewText($"You got {premierBonus} Premier Balls as an added bonus!", Color.Yellow);
+
+						Player.QuickSpawnItem(Player.GetSource_GiftOrReward(), ModContent.ItemType<PremierBallItem>(), premierBonus);
+					}
+                    premierBonusCount = 0;
+                }
+            }
+        }
 
 		public void UpdatePkmn()
         {
@@ -70,15 +85,16 @@ namespace TerramonMod
 				usePokePet = -1;
 		}
 
+        public override void PostSellItem(NPC vendor, Item[] shopInventory, Item item)
+        {
+			if (item.type == ModContent.ItemType<PokeBallItem>())
+				premierBonusCount--;
+		}
+
         public override void PostBuyItem(NPC vendor, Item[] shopInventory, Item item)
         {
 			if (item.type == ModContent.ItemType<PokeBallItem>())
 				premierBonusCount++;
-			if (premierBonusCount == 10)
-			{
-				Player.QuickSpawnItem(Player.GetSource_GiftOrReward(), ModContent.ItemType<PremierBallItem>());
-				premierBonusCount = 0;
-			}
         }
 
         // In MP, other clients need accurate information about your player or else bugs happen.

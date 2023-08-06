@@ -55,17 +55,21 @@ namespace TerramonMod.Items.Consumable
         {
             var pkmn = player.GetModPlayer<TerramonPlayer>().pokeInUse;
             pkmn.data.LevelUp();
-            SoundEngine.PlaySound(SoundID.Item29 with { Volume = 0.5f }, player.position);
             Main.NewText($"{pkmn.data.GetName()} is now Level {pkmn.data.level}!", Color.Yellow);
 
             if (TerramonMod.fastEvolution)
             {
                 if (pkmn.data.Evolve())
-                pkmn.UpdateName();
+                    pkmn.UpdateName();
+                else
+                    SoundEngine.PlaySound(SoundID.Item29 with { Volume = 0.5f }, player.position);
             }
             else
+            {
+                SoundEngine.PlaySound(SoundID.Item29 with { Volume = 0.5f }, player.position);
                 if (pkmn.data.IsEvolveReady())
-                Main.NewText($"{pkmn.data.GetName()} is ready to evolve!", Color.Yellow);
+                    Main.NewText($"{pkmn.data.GetName()} is ready to evolve!", Color.Yellow);
+            }
 
             return true;
         }

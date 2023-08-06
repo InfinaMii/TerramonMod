@@ -12,6 +12,7 @@ using Terraria.UI;
 using TerramonMod.UI;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using TerramonMod.Items.Pokeballs;
 
 namespace TerramonMod
 {
@@ -52,7 +53,10 @@ namespace TerramonMod
 				Ref<Effect> fxPkmnSpawnRef = new Ref<Effect>(ModContent.Request<Effect>("TerramonMod/Effects/PkmnSpawn", AssetRequestMode.ImmediateLoad).Value);
 				GameShaders.Misc["fxPkmnSpawn"] = new MiscShaderData(fxPkmnSpawnRef, "TerramonShaderPass");
 			}
+		}
 
+        public override void PostSetupContent()
+        {
 			//Compatibility with Dialogue Panel Rework mod
 			if (ModLoader.TryGetMod("DialogueTweak", out Mod dialogueTweak))
 			{
@@ -62,9 +66,20 @@ namespace TerramonMod
 					"TerramonMod/UI/EvolveIcon"
 					);
 			}
+
+			//Compatibility with Achievement Mod
+			/*if (ModLoader.TryGetMod("TMLAchievements", out Mod achievements))
+			{
+				achievements.Call("AddAchievement", this,
+					"TerramonAchievement",
+					Terraria.Achievements.AchievementCategory.Collector,
+					"TerramonMod/Achievements/JourneyStart",
+					null,
+					false, false, 1f, new string[] { "Collect_" + ModContent.ItemType<PokeBallItem>() });
+			}*/
 		}
 
-		public override void HandlePacket(BinaryReader reader, int whoAmI)
+        public override void HandlePacket(BinaryReader reader, int whoAmI)
 		{
 			TmonMessageType msgType = (TmonMessageType)reader.ReadByte();
 			switch (msgType)
