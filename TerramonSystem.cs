@@ -13,36 +13,65 @@ namespace TerramonMod
 {
     class TerramonSystem : ModSystem
     {
-		/*internal TestCanvas testCanvas;
-		private UserInterface _testUI;
-		public override void Load()
-		{
-			testCanvas = new TestCanvas();
-			testCanvas.Activate();
-			_testUI = new UserInterface();
-			_testUI.SetState(testCanvas);
-		}
-		public override void UpdateUI(GameTime gameTime)
-		{
-			_testUI?.Update(gameTime);
-		}
+		internal TestCanvas terramonCanvas;
+		internal UserInterface terramonUI;
 
-		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
-		{
-			int mouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
-			if (mouseTextIndex != -1)
-			{
-				layers.Insert(mouseTextIndex, new LegacyGameInterfaceLayer(
-					"TerramonMod: A Description",
-					delegate
-					{
-						_testUI.Draw(Main.spriteBatch, new GameTime());
-						return true;
-					},
-					InterfaceScaleType.UI)
-				);
-			}
-		}*/
-	}
+        private GameTime _lastUpdateUiGameTime;
+
+        public override void Load()
+        {
+            if (!Main.dedServ)
+            {
+                terramonUI = new UserInterface();
+
+                terramonCanvas = new TestCanvas();
+                terramonCanvas.Activate(); // Activate calls Initialize() on the UIState if not initialized and calls OnActivate, then calls Activate on every child element.
+            }
+        }
+
+        public override void Unload()
+        {
+            terramonCanvas = null;
+        }
+
+
+        public override void UpdateUI(GameTime gameTime)
+        {
+            //update canvas and all of its elements
+            _lastUpdateUiGameTime = gameTime;
+            if (terramonUI?.CurrentState != null)
+            {
+                terramonUI.Update(gameTime);
+            }
+        }
+        public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+        {
+            //add custom layer to ui and make it draw itself
+            int mouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+            if (mouseTextIndex != -1)
+            {
+                layers.Insert(mouseTextIndex, new LegacyGameInterfaceLayer(
+                    "TerramonMod: Terramon UI",
+                    delegate
+                    {
+                        if (_lastUpdateUiGameTime != null && terramonUI?.CurrentState != null)
+                        {
+                            terramonUI.Draw(Main.spriteBatch, _lastUpdateUiGameTime);
+                        }
+                        return true;
+                    },
+                    InterfaceScaleType.UI));
+            }
+        }
+        internal void ShowStarterUI()
+        {
+            terramonUI?.SetState(terramonCanvas);
+        }
+
+        internal void HideStarterUI()
+        {
+            terramonUI?.SetState(null);
+        }
+    }
 
 }

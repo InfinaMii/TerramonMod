@@ -1,55 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
-using Terraria.ModLoader;
-using Terraria.UI;
 
 namespace TerramonMod.UI
 {
-    class UIHoverImageButton : UIImageButton
-    {
-        internal string HoverText;
-        internal Vector2 drawPosition;
-        public UIHoverImageButton(ReLogic.Content.Asset<Texture2D> texture, string hoverText) : base(texture)
-        {
-            HoverText = hoverText;
-        }
+	// This UIHoverImageButton class inherits from UIImageButton. 
+	// Inheriting is a great tool for UI design. 
+	// By inheriting, we get the Image drawing, MouseOver sound, and fading for free from UIImageButton
+	// We've added some code to allow the Button to show a text tooltip while hovered. 
+	internal class UIHoverImageButton : UIImageButton
+	{
+		internal string HoverText;
 
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
+		public UIHoverImageButton(Asset<Texture2D> texture, string hoverText) : base(texture)
+		{
+			HoverText = hoverText;
+		}
 
-            if (isHover)
-                Main.LocalPlayer.mouseInterface = true;
-        }
+		protected override void DrawSelf(SpriteBatch spriteBatch)
+		{
+			base.DrawSelf(spriteBatch);
 
-        bool isHover = false;
-        //bool origUseState = false;
-
-        public override void MouseOver(UIMouseEvent evt)
-        {
-            isHover = true;
-            //origUseState = Main.LocalPlayer.delayUseItem;
-        }
-
-        public override void MouseOut(UIMouseEvent evt)
-        {
-            isHover = false;
-            //Main.LocalPlayer.delayUseItem = origUseState;
-        }
-
-        protected override void DrawSelf(SpriteBatch spriteBatch)
-        {
-            base.DrawSelf(spriteBatch);
-
-            if (IsMouseHovering)
-            {
-                Main.hoverItemName = HoverText;
-            }
-        }
-    }
+			if (IsMouseHovering)
+			{
+				Main.hoverItemName = HoverText;
+			}
+		}
+	}
 }

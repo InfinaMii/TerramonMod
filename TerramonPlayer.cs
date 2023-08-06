@@ -17,7 +17,8 @@ namespace TerramonMod
 {
     class TerramonPlayer : ModPlayer
     {
-        public int introPhase = 0;
+		public bool hasChosenStarter = false;
+		public bool hasStartPokeballs = false;
 
         public BasePkballItem pokeInUse = null;
 
@@ -26,33 +27,40 @@ namespace TerramonMod
 
 		public int premierBonusCount = 0;
 
-        public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
-        {
-            if (mediumCoreDeath)
-                return Enumerable.Empty<Item>();
-
-            introPhase = -1;
-
-            return new[] {
-                new Item(ModContent.ItemType<PokeBallItem>(), 5),
-            };
-        }
-
 		public override void SaveData(TagCompound tag)
         {
-			tag.Set(nameof(introPhase), introPhase);
+			tag.Set(nameof(hasChosenStarter), hasChosenStarter);
+			tag.Set(nameof(hasStartPokeballs), hasStartPokeballs);
 		}
 
 		public override void LoadData(TagCompound tag)
 		{
-			introPhase = tag.Get<int>(nameof(introPhase));
+			hasChosenStarter = tag.Get<bool>(nameof(hasChosenStarter));
+			hasStartPokeballs = tag.Get<bool>(nameof(hasStartPokeballs));
 		}
 
-		public override void PreUpdate()
+        public override void OnEnterWorld()
+        {
+            base.OnEnterWorld();
+
+			if (hasChosenStarter)
+				ModContent.GetInstance<TerramonSystem>().HideStarterUI();
+			else
+				ModContent.GetInstance<TerramonSystem>().ShowStarterUI();
+		}
+
+        public override void PreUpdate()
         {
 			if (Main.LocalPlayer == Player) //Only change these values if they belong to this client (other clients' pokeInUse for this player always null)
 			{
 				UpdatePkmn();
+
+				if (hasChosenStarter && !hasStartPokeballs)
+                {
+					hasStartPokeballs = true;
+					Player.QuickSpawnItem(Player.GetSource_GiftOrReward(), ModContent.ItemType<PokeBallItem>(), 5);
+					Main.NewText($"You got 5 Poke Balls to start you on your journey!", Color.Yellow);
+				}
 
                 if (premierBonusCount > 0 && Main.npcShop == 0)
                 {
