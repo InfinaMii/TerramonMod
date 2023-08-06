@@ -20,6 +20,7 @@ namespace TerramonMod
 	{
 		public static bool fastAnimations = false;
 		public static bool fastEvolution = true;
+		public static bool randomStarters = false;
 
 		public enum PkmnType
 		{
