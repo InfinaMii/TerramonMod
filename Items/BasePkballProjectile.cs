@@ -13,6 +13,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using TerramonMod.Items.Pokeballs;
 using TerramonMod.Pokemon;
+using Terraria.GameContent.Events;
 
 namespace TerramonMod.Items
 {
@@ -109,6 +110,13 @@ namespace TerramonMod.Items
                 capture = Main.npc[captureId].ModNPC as BasePkmn;
         }
 
+        public override void OnSpawn(IEntitySource source)
+        {
+            Projectile.velocity += Main.player[Projectile.owner].velocity * 0.75f;
+            if (Sandstorm.Happening && Main.player[Projectile.owner].ZoneDesert)
+                Projectile.velocity.X -= 2f;
+        }
+
         public override void AI()
         {
             //Main.NewText(catchRandom, Color.Pink);
@@ -143,6 +151,7 @@ namespace TerramonMod.Items
             {
                 if (capture != null && capture.catchable)
                 {
+                    //SoundEngine.PlaySound(new SoundStyle("TerramonMod/Sounds/pkball_consume"));
                     capture.Destroy(); //Destroy Pokemon NPC
                 }
 

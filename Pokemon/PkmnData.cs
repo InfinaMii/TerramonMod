@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ModLoader;
 
 namespace TerramonMod.Pokemon
@@ -58,7 +59,7 @@ namespace TerramonMod.Pokemon
             return null;
         }
 
-        public bool Evolve(string item = null)
+        public bool Evolve(string item = null, bool outputChat = true)
         {
             var pokemon = GetEvolution(item);
             if (pokemon == null)
@@ -66,7 +67,9 @@ namespace TerramonMod.Pokemon
 
             var name = GetName();
             pkmn = pokemon;
-            Main.NewText($"Congratulations! Your {name} evolved into {GetInfo().Name}!", Color.Yellow);
+            if (outputChat)
+                Main.NewText($"Congratulations! Your {name} evolved into {GetInfo().Name}!", Color.Yellow);
+            SoundEngine.PlaySound(new SoundStyle("TerramonMod/Sounds/pkball_catch_pla"));
 
             return true;
         }

@@ -53,7 +53,6 @@ namespace TerramonMod.Items.Consumable
         public override bool? UseItem(Player player) //Manage what happens when the player uses the item
         {
             var pkmn = player.GetModPlayer<TerramonPlayer>().pokeInUse;
-            SoundEngine.PlaySound(SoundID.Item29 with { Volume = 0.5f }, player.position);
 
             pkmn.data.Evolve(ItemKey);
             pkmn.UpdateName();
