@@ -14,6 +14,7 @@ using Terraria.ModLoader.Utilities;
 using TerramonMod.Items;
 using static TerramonMod.TerramonMod;
 using TerramonMod.Pokemon.Dusts;
+using TerramonMod.Pokemon.Gen1;
 
 namespace TerramonMod.Pokemon
 {
@@ -24,6 +25,7 @@ namespace TerramonMod.Pokemon
 		public virtual float commodity => 1f;
 		public virtual bool doesFly => false;
 
+		public bool isShimmer = false;
 		public bool isShiny = false;
 		public bool catchable = true;
 		public int catchAttempts = 0;
@@ -82,6 +84,7 @@ namespace TerramonMod.Pokemon
 			NPC.DeathSound = null;
 			NPC.netAlways = true;
 			NPC.friendly = true;
+			NPCID.Sets.ShimmerTownTransform[NPC.type] = true;
 			//NPC.noGravity = true;
 			//NPC.wet = true;
 			//NPC.scale = 2;
@@ -224,6 +227,11 @@ namespace TerramonMod.Pokemon
 				level = Main.rand.Next(1, 5);
 			}
 
+			NPCID.Sets.ShimmerTownTransform[NPC.type] = !isShimmer;
+
+			if (NPC.IsShimmerVariant)
+				isShimmer = true;
+
 			//info.Nickname = null;
 
 			base.AI();
@@ -330,7 +338,7 @@ namespace TerramonMod.Pokemon
 		{
 			// get the sprite path
 			string spritePath = Texture;
-			if (isShiny)
+			if (isShiny || isShimmer)
 			{
 				spritePath += "_Shiny";
 			}

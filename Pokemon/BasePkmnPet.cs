@@ -87,12 +87,12 @@ namespace TerramonMod.Pokemon
 
         public override bool PreDraw(ref Color lightColor)
 		{
-			Player player = Main.player[Projectile.owner];
+			var player = Main.player[Projectile.owner].GetModPlayer<TerramonPlayer>();
 
 			// get the sprite path
 			string spritePath = Texture;
 
-			if (player.GetModPlayer<TerramonPlayer>().usePokeIsShiny)
+			if (player.usePokeIsShiny || player.usePokeIsShimmer)
 			{
 				spritePath += "_Shiny";
 			}
@@ -127,11 +127,20 @@ namespace TerramonMod.Pokemon
 			//frameTimer = 0;
 
 			var tmonPlayer = Main.player[Projectile.owner].GetModPlayer<TerramonPlayer>();
-			if (tmonPlayer.pokeInUse != null && tmonPlayer.pokeInUse.data.IsEvolveReady())
-			{
-				if ((int)Main.rand.Next(0, 60) == 0)
-					Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.TreasureSparkle);
-			}
+			if (tmonPlayer.pokeInUse != null)
+            {
+				int dust = -1;
+
+				if (tmonPlayer.usePokeIsShiny && GetMoveSpeed() > 0.2f)
+					if ((int)Main.rand.Next(0, 25) == 0)
+						dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.GolfPaticle, newColor: tmonPlayer.pokeInUse.data.IsEvolveReady() ? Color.Yellow : Color.White, Scale: 1.5f);
+				else if (tmonPlayer.pokeInUse.data.IsEvolveReady())
+					if ((int)Main.rand.Next(0, 60) == 0)
+						dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.TreasureSparkle);
+
+				if (dust != -1)
+					Main.dust[dust].noGravity = true;
+            }
 
 			Projectile.frame = currentFrame;
 		}

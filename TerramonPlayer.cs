@@ -24,6 +24,7 @@ namespace TerramonMod
 
 		public int usePokePet = -1;
 		public bool usePokeIsShiny = false;
+		public bool usePokeIsShimmer = false;
 
 		public int premierBonusCount = 0;
 
@@ -88,6 +89,7 @@ namespace TerramonMod
 			{
 				usePokePet = pokeInUse.data.GetInfo().petType;
 				usePokeIsShiny = pokeInUse.data.isShiny;
+				usePokeIsShimmer =  pokeInUse.data.isShimmer;
 			}
 			else
 				usePokePet = -1;
@@ -128,6 +130,7 @@ namespace TerramonMod
 			packet.Write((byte)Player.whoAmI);
 			packet.Write(usePokePet); // While we sync nonStopParty in SendClientChanges, we still need to send it here as well so newly joining players will receive the correct value.
 			packet.Write(usePokeIsShiny);
+			packet.Write(usePokeIsShimmer);
 			packet.Send(toWho, fromWho);
 		}
 
@@ -135,7 +138,9 @@ namespace TerramonMod
 		{
 			// Here we would sync something like an RPG stat whenever the player changes it.
 			TerramonPlayer clone = clientPlayer as TerramonPlayer;
-			if (clone.usePokePet != usePokePet || clone.usePokeIsShiny != usePokeIsShiny)
+			if (clone.usePokePet != usePokePet || 
+				clone.usePokeIsShiny != usePokeIsShiny || 
+				clone.usePokeIsShimmer != usePokeIsShimmer)
 			{
 				// Send a Mod Packet with the changes.
 				var packet = Mod.GetPacket();
@@ -143,6 +148,7 @@ namespace TerramonMod
 				packet.Write((byte)Player.whoAmI);
 				packet.Write(usePokePet);
 				packet.Write(usePokeIsShiny);
+				packet.Write(usePokeIsShimmer);
 				packet.Send();
 			}
 		}

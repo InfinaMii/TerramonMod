@@ -16,6 +16,7 @@ namespace TerramonMod.Pokemon
         public string pkmn = null;
         public string Nickname = null;
         public bool isShiny = false;
+        public bool isShimmer = false;
         public int level = 1;
 
         /*public void Evolve()
@@ -113,7 +114,7 @@ namespace TerramonMod.Pokemon
             string output = "";
             if (Nickname != null)
                 output = $"{Nickname}: ";
-            output += $"Level {level} {info.Name}. It is a {info.type1}";
+            output += $"Level {level} {(isShiny ? "Shiny " : null)}{info.Name}. It is a {info.type1}";
             if (info.type2 != null)
                 output += $"-{info.type2.Value}";
             output += " type.";

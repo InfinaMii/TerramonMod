@@ -22,7 +22,7 @@ namespace TerramonMod.Items.Consumable
         }
         public override void SetDefaults()
         {
-            Item.useStyle = 5;// ItemUseStyleID.HoldUp;
+            Item.useStyle = ItemUseStyleID.Shoot;// ItemUseStyleID.HoldUp;
             Item.maxStack = 999;
             Item.value = 3000;
             Item.consumable = true;
@@ -79,5 +79,11 @@ namespace TerramonMod.Items.Consumable
             return new Vector2(-2, 4);
         }
 
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+            .AddCustomShimmerResult(ItemID.CandyCane, 3)
+            .Register();
+        }
     }
 }

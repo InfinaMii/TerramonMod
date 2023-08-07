@@ -80,7 +80,7 @@ namespace TerramonMod.Items
 
 			if (data != null)
 			{
-				string suffix = data.isShiny ? "_Shiny" : "";
+				string suffix = data.isShiny || data.isShimmer ? "_Shiny" : "";
 				string texture = ModContent.GetModProjectile(data.GetInfo().petType).Texture.Replace($"Pokemon/Gen{data.GetInfo().gen}/", "Minisprites/mini");
 
 				Texture2D pokemonSprite = ModContent.Request<Texture2D>($"{texture}{suffix}").Value;
@@ -126,6 +126,16 @@ namespace TerramonMod.Items
 			var other = (BasePkballItem)item2.ModItem;
 			if (data == null && other.data == null) //Only stack if both items are empty
 				return true;
+			/*if (data != null && other.data != null)
+			{
+				//swap data of other ball and this ball
+				var tempData = data;
+				data = other.data;
+				other.data = tempData;
+				other.UpdateName();
+				UpdateName();
+				return false;
+			}*/ //removed due to swapping balls whenever a new one is picked up
 			return false;
         }
 		public override bool CanStackInWorld(Item item2) => CanStack(item2);
