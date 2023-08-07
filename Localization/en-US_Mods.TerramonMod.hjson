@@ -92,6 +92,11 @@ Items: {
 		DisplayName: Linking Cord
 		Tooltip: A cable that makes you feel a strange sense of connection. It’s loved by certain Pokemon.
 	}
+
+	ShimmerBallItem: {
+		DisplayName: Shimmer Ball Item
+		Tooltip: ""
+	}
 }
 
 NPCs: {
@@ -422,6 +427,7 @@ Projectiles: {
 	ZubatPet.DisplayName: Zubat
 	NidoranFPet.DisplayName: Nidoran F
 	NidoranMPet.DisplayName: Nidoran M
+	ShimmerBallProjectile.DisplayName: Shimmer Ball Projectile
 }
 
 Configs: {

@@ -21,9 +21,9 @@ namespace TerramonMod.Items.Consumable
         }
         public override void SetDefaults()
         {
-            Item.useStyle = 5;// ItemUseStyleID.HoldUp;
+            Item.useStyle = ItemUseStyleID.Shoot;// ItemUseStyleID.HoldUp;
             Item.maxStack = 999;
-            Item.value = 3000;
+            Item.value = 100000;
             Item.consumable = true;
             Item.UseSound = null;
             Item.useTime = 20;

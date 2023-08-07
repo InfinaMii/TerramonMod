@@ -5,8 +5,14 @@ using Terraria;
 
 namespace TerramonMod.Items.Consumable
 {
-    class FireStone : BaseEvolveItem
-    {
-        public override string ItemKey => "FireStone";
-    }
+	class FireStone : BaseEvolveItem
+	{
+		public override string ItemKey => "FireStone";
+		public override void AddRecipes()
+		{
+			CreateRecipe()
+			.AddCustomShimmerResult(ModContent.ItemType<WaterStone>())
+			.Register();
+		}
+	}
 }

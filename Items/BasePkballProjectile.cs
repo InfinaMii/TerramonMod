@@ -119,6 +119,25 @@ namespace TerramonMod.Items
 
         public override void AI()
         {
+            if (Projectile.shimmerWet)
+            {
+                if (Type != ModContent.ProjectileType<PremierBallProjectile>())
+                {
+                    var shimmer = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, new Vector2(Projectile.velocity.X, Projectile.velocity.Y * -0.8f), ModContent.ProjectileType<PremierBallProjectile>(), 0, 0, Projectile.owner);
+                    var shimmerProj = Main.projectile[shimmer].ModProjectile as BasePkballProjectile;
+                    shimmerProj.catchModifier = catchModifier;
+                    Projectile.Kill();
+                }
+                else if (bounces > 0 && Projectile.velocity.Y < 0)
+                {
+                    Projectile.shimmerWet = false;
+                    Projectile.velocity.Y *= -0.8f;
+                    SoundEngine.PlaySound(new SoundStyle("TerramonMod/Sounds/pkball_bounce"), Projectile.position);
+                    bounces -= 1;
+                }
+            }
+            
+
             //Main.NewText(catchRandom, Color.Pink);
             if (TerramonMod.fastAnimations)
                 speedMultiply = 0.65f;
@@ -256,19 +275,18 @@ namespace TerramonMod.Items
             return catchModifier;
         }
 
-
         public void PokemonCatchSuccess()
         {
             var newItem = Item.NewItem(this.Entity.GetSource_DropAsItem(), Main.player[Projectile.owner].position, pokeballCapture);
             var newPkball = Main.item[newItem].ModItem as BasePkballItem;
-            newPkball.SetContents(new PkmnData { pkmn = capture.GetType().Name, level = capture.level, isShiny = capture.isShiny });
+            newPkball.SetContents(new PkmnData { pkmn = capture.GetType().Name, level = capture.level, isShiny = capture.isShiny, isShimmer = capture.isShimmer });
             if (Main.netMode == NetmodeID.MultiplayerClient)
                 NetMessage.SendData(MessageID.SyncItem, -1, -1, null, newItem, 1f);
             //item.hold.Nickname = "Keffreye";
 
 
             SoundEngine.PlaySound(new SoundStyle("TerramonMod/Sounds/pkball_catch_pla"));
-            Main.NewText($"Congratulations! You caught a level {capture.level} {capture.info.Name}", Color.Orange);
+            Main.NewText($"Congratulations! You caught a {(capture.isShiny ? "shiny" : null)} level {capture.level} {capture.info.Name}", Color.Orange);
             Projectile.Kill();
         }
 
@@ -311,6 +329,8 @@ namespace TerramonMod.Items
                 NPC e = new NPC();
                 var newNPC = NPC.NewNPC(source, (int)Projectile.Center.X, (int)Projectile.Center.Y, capture.Type); // spawn a new NPC at the new position
                 var newPoke = (BasePkmn)Main.npc[newNPC].ModNPC;
+                newPoke.isShiny = capture.isShiny;
+                newPoke.level = capture.level;
                 newPoke.catchAttempts = capture.catchAttempts + 1;
                 //Main.NewText($"Catch attempts: {newPoke.catchAttempts}", Color.Firebrick);
                 capture = null;
