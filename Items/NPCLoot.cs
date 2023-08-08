@@ -11,6 +11,12 @@ namespace TerramonMod.Items
 {
     class NPCLoot : GlobalNPC
     {
+        public override void ModifyShop(NPCShop shop)
+        {
+            if (shop.NpcType == NPCID.Mechanic)
+                shop.Add<LinkCable>();
+        }
+
         public override void ModifyNPCLoot(NPC npc, Terraria.ModLoader.NPCLoot npcLoot)
         {
             if (!npc.boss)
@@ -57,19 +63,6 @@ namespace TerramonMod.Items
                     amount = (int)(amount * 1.5);
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RareCandy>(), minimumDropped: amount, maximumDropped: amount));
             }
-        }
-
-        public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
-        {
-            if (npc.type == NPCID.Mechanic)
-                foreach (var item in items)
-                    if (item.IsAir)
-                    {
-                        item.SetDefaults(ModContent.ItemType<LinkCable>());
-                        break;
-                    }
-
-
         }
     }
 }

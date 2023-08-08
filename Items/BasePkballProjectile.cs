@@ -114,7 +114,7 @@ namespace TerramonMod.Items
         {
             Projectile.velocity += Main.player[Projectile.owner].velocity * 0.75f;
             if (Sandstorm.Happening && Main.player[Projectile.owner].ZoneDesert)
-                Projectile.velocity.X -= 2f;
+                Projectile.velocity.X -= 1.75f;
         }
 
         public override void AI()
