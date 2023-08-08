@@ -16,14 +16,24 @@ using System.Collections.Generic;
 using ReLogic.Content;
 using Terraria.ModLoader.IO;
 using TerramonMod.Items.Pokeballs;
+using TerramonMod.Items.Vanity;
+using TerramonMod.Projectiles;
+using static Terraria.GameContent.Profiles;
 
 namespace TerramonMod.NPCs
 {
     // [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
     [AutoloadHead]
+    
     public class PokemartClerk : ModNPC
     {
-        public int NumberOfTimesTalkedTo;
+        private static int ShimmerHeadIndex;
+        private static Profiles.StackedNPCProfile NPCProfile;
+        public override void Load()
+        {
+            // Adds our Shimmer Head to the NPCHeadLoader.
+            ShimmerHeadIndex = Mod.AddNPCHeadTexture(Type, Texture + "_Shimmer_Head");
+        }
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Poke Mart Clerk");
@@ -35,7 +45,8 @@ namespace TerramonMod.NPCs
             NPCID.Sets.AttackType[Type] = 0;
             NPCID.Sets.AttackTime[Type] = 90; // The amount of time it takes for the NPC's attack animation to be over once it starts.
             NPCID.Sets.AttackAverageChance[Type] = 30;
-            NPCID.Sets.HatOffsetY[Type] = 4; // For when a party is active, the party hat spawns at a Y offset.
+            NPCID.Sets.HatOffsetY[Type] = 3; // For when a party is active, the party hat spawns at a Y offset.
+            NPCID.Sets.ShimmerTownTransform[Type] = true;
 
             // Influences how the NPC looks in the Bestiary
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
@@ -60,6 +71,12 @@ namespace TerramonMod.NPCs
                 .SetNPCAffection(NPCID.Merchant, AffectionLevel.Dislike) // Dislikes living near the merchant.
                 .SetNPCAffection(NPCID.Demolitionist, AffectionLevel.Hate) // Hates living near the demolitionist.
             ; // < Mind the semicolon!
+
+            // This creates a "profile" for our NPC, which allows for different textures during a party and/or while the NPC is shimmered.
+            NPCProfile = new Profiles.StackedNPCProfile(
+                new DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture)),
+                new DefaultNPCProfile(Texture + "_Shimmer", ShimmerHeadIndex, Texture + "_Shimmer_Hatless")
+            );
         }
 
         public override void SetDefaults()
@@ -70,7 +87,7 @@ namespace TerramonMod.NPCs
             NPC.width = 18;
             NPC.height = 40;
             NPC.aiStyle = 7;
-            NPC.damage = 10;
+            NPC.damage = 20;
             NPC.defense = 15;
             NPC.lifeMax = 250;
             NPC.HitSound = SoundID.NPCHit1;
@@ -97,7 +114,7 @@ namespace TerramonMod.NPCs
 
         public override ITownNPCProfile TownNPCProfile()
         {
-            return new PokemartClerkProfile();
+            return NPCProfile;
         }
 
         public override List<string> SetNPCNameList()
@@ -122,10 +139,22 @@ namespace TerramonMod.NPCs
             //chat.Add("As your journey progresses, I'll offer new things. Check back here every so often.");
             chat.Add("Different Pokémon like living in different places. If you travel around, you may find new Pokemon!");
             chat.Add("There are many different regions in the world. One day I hope to visit all of them!");
-            chat.Add("I conveniently sell Pokéballs for you to buy, but if you're short of cash you can always make your own using apricorns and iron!");
+            //chat.Add("I conveniently sell Pokéballs for you to buy, but if you're short of cash you can always make your own using apricorns and iron!");
             chat.Add("A remake of Mobile Creatures has been announced! Though I'm not sure how I feel about the art style...");
             chat.Add($"Ever since Pokémon started appearing in {Main.worldName}, I've dedicated my life to helping people care for them properly.");
             chat.Add("The Pokémon around here seem very peaceful. It's unusual to see creatures geting along so well.");
+            if (NPC.IsShimmerVariant)
+                chat.Add("Like my outfit? I look just like a real Pokemon Trainer!");
+            else
+                chat.Add("Have you heard of Shimmer? Apparently it can give people their own shiny form!");
+            if (player.usePokeIsShiny)
+                chat.Add("Is that a shiny Pokemon? That's incredible! I wish I had one myself.");
+            else if (player.usePokeIsShimmer)
+                chat.Add("Interesting... Your Pokemon has the same colors as a shiny Pokemon, but none of the... well - shine.");
+
+            var merchant = NPC.FindFirstNPC(NPCID.Merchant);
+            if (merchant >= 0)
+                chat.Add(Language.GetTextValue($"{Main.npc[merchant].GivenName} may be a bit greedy, but he has taught me everything I know about commerce."));
 
             return chat; // chat is implicitly cast to a string.
         }
@@ -155,12 +184,17 @@ namespace TerramonMod.NPCs
             }
         }
 
+        public static Condition TrainerSetCondition = new Condition("ClerkTrainerSale", () => Condition.IsNpcShimmered.IsMet() || Main.halloween);
+
         public override void AddShops()
         {
             var npcShop = new NPCShop(Type, "Shop")
                 .Add<PokeBallItem>()
                 .Add<GreatBallItem>()
-                .Add<UltraBallItem>();
+                .Add<UltraBallItem>()
+                .Add<TrainerCap>(TrainerSetCondition)
+                .Add<TrainerTorso>(TrainerSetCondition)
+                .Add<TrainerLegs>(TrainerSetCondition);
 
             npcShop.Register(); // Name of this shop tab
         }
@@ -168,18 +202,41 @@ namespace TerramonMod.NPCs
 
         // Make this Town NPC teleport to the King and/or Queen statue when triggered.
         public override bool CanGoToStatue(bool toKingStatue) => true;
+
+        public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
+        {
+            projType = ModContent.ProjectileType<PokeBomb>();
+            attackDelay = 1;
+        }
     }
 
-    public class PokemartClerkProfile : ITownNPCProfile
+    /*public class PokemartClerkProfile : ITownNPCProfile
     {
+        private string texture;
+        private string partyTexture;
+        private int headIndex;
+
+        public PokemartClerkProfile(string texture, int headIndex, string partyTexture = null)
+        {
+            this.texture = texture;
+            if (partyTexture != null)
+                this.partyTexture = partyTexture;
+            else
+                this.partyTexture = texture;
+            this.headIndex = headIndex;
+        }
+
         public int RollVariation() => 0;
         public string GetNameForVariant(NPC npc) => npc.getNewNPCName();
 
         public Asset<Texture2D> GetTextureNPCShouldUse(NPC npc)
         {
-            return ModContent.Request<Texture2D>("TerramonMod/NPCs/PokemartClerk");
+            if (npc.ForcePartyHatOn)
+                return ModContent.Request<Texture2D>(partyTexture);
+            else
+                return ModContent.Request<Texture2D>(texture);
         }
 
-        public int GetHeadTextureIndex(NPC npc) => ModContent.GetModHeadSlot("TerramonMod/NPCs/PokemartClerk_Head");
-    }
+        public int GetHeadTextureIndex(NPC npc) => headIndex;
+    }*/
 }

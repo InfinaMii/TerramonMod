@@ -97,6 +97,11 @@ Items: {
 		DisplayName: Shimmer Ball Item
 		Tooltip: ""
 	}
+
+	PokeBombItem: {
+		DisplayName: Poke Bomb Item
+		Tooltip: ""
+	}
 }
 
 NPCs: {
@@ -428,6 +433,7 @@ Projectiles: {
 	NidoranFPet.DisplayName: Nidoran F
 	NidoranMPet.DisplayName: Nidoran M
 	ShimmerBallProjectile.DisplayName: Shimmer Ball Projectile
+	PokeBomb.DisplayName: Poke Bomb
 }
 
 Configs: {
