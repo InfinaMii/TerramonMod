@@ -39,28 +39,23 @@ Items: {
 	}
 
 	TrainerCap: {
-		DisplayName: Trainer Cap
-		Tooltip: ""
-	}
-
-	TrainerLegs: {
-		DisplayName: Trainer Legs
+		DisplayName: Pokemon Trainer Cap
 		Tooltip: ""
 	}
 
 	TrainerTorso: {
-		DisplayName: Trainer Torso
+		DisplayName: Pokemon Trainer Jacket
+		Tooltip: ""
+	}
+
+	TrainerLegs: {
+		DisplayName: Pokemon Trainer Jeans
 		Tooltip: ""
 	}
 
 	MusicItemCenter: {
-		DisplayName: Pokemon Centre Music Box
+		DisplayName: Music Box (Pokemon Center)
 		Tooltip: ""
-	}
-
-	BasePkballItem: {
-		Tooltip: ""
-		DisplayName: Base Pkball Item
 	}
 
 	WaterStone: {
@@ -92,37 +87,25 @@ Items: {
 		DisplayName: Linking Cord
 		Tooltip: A cable that makes you feel a strange sense of connection. It’s loved by certain Pokemon.
 	}
-
-	ShimmerBallItem: {
-		DisplayName: Shimmer Ball Item
-		Tooltip: ""
-	}
-
-	PokeBombItem: {
-		DisplayName: Poke Bomb Item
-		Tooltip: ""
-	}
 }
 
 NPCs: {
 	PokemartClerk: {
-		DisplayName: Pokemart Clerk
+		DisplayName: PokeMart Clerk
 
 		TownNPCMood: {
-			Content: I am content.
-			NoHome: I hate not having a home.
-			FarFromHome: I am too far from home.
-			LoveSpace: I love having so much space.
-			DislikeCrowded: I dislike how crowded I am.
-			HateCrowded: I hate how crowded I am.
-			LoveBiome: I love {BiomeName}.
-			LikeBiome: I like {BiomeName}.
-			DislikeBiome: I dislike {BiomeName}.
-			LoveNPC: I love {NPCName}.
-			LikeNPC: I like {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
-			LikeNPC_Princess: I like {NPCName}.
+			Content: I rather enjoy my living space.
+			NoHome: I wish I had somewhere to live.
+			FarFromHome: I miss being back at my home.
+			LoveSpace: I love how much space there is for wild Pokemon to appear!
+			DislikeCrowded: Although there are plenty of people to talk to, it's a bit crowded.
+			HateCrowded: There are way too many people living here!
+			LikeBiome: There are so many Pokemon to see in {BiomeName}!
+			DislikeBiome: I dislike {BiomeName}. It's so creepy and everything is out to get you!
+			LikeNPC: I like {NPCName}. They've helped me out a ton.
+			LikeNPC_Princess: I like {NPCName}. Who doesn't?
+			DislikeNPC: I find {NPCName} a bit too loud.
+			HateNPC: I hate {NPCName}. He just doesn't respect Pokemon.
 			Princess_LovesNPC: I like {NPCName}.
 		}
 	}
@@ -283,8 +266,6 @@ Projectiles: {
 	PokeBallProjectile.DisplayName: Poke Ball
 	PremierBallProjectile.DisplayName: Premier Ball
 	UltraBallProjectile.DisplayName: Ultra Ball
-	BasePkballProjectile.DisplayName: Base Pkball Projectile
-	BasePkmnPet.DisplayName: Base Pkmn
 	AbraPet.DisplayName: Abra
 	AerodactylPet.DisplayName: Aerodactyl
 	AlakazamPet.DisplayName: Alakazam
@@ -432,7 +413,6 @@ Projectiles: {
 	ZubatPet.DisplayName: Zubat
 	NidoranFPet.DisplayName: Nidoran F
 	NidoranMPet.DisplayName: Nidoran M
-	ShimmerBallProjectile.DisplayName: Shimmer Ball Projectile
 	PokeBomb.DisplayName: Poke Bomb
 }
 
