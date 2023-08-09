@@ -148,7 +148,7 @@ namespace TerramonMod.NPCs
             //chat.Add("I conveniently sell Pokéballs for you to buy, but if you're short of cash you can always make your own using apricorns and iron!");
             chat.Add("A remake of Mobile Creatures has been announced! Though I'm not sure how I feel about the art style...");
             chat.Add($"Ever since Pokémon started appearing in {Main.worldName}, I've dedicated my life to helping people learn more about them.");
-            chat.Add("The Pokémon around here seem very peaceful. It's unusual to see creatures geting along so well.");
+            chat.Add("The Pokémon around here seem very peaceful. It's unusual to see creatures getting along so well.");
 
             if (NPC.GivenName == "Pikachu")
                 chat.Add("Now, I know what you're thinking. \"That's such a creative name!\"");
