@@ -1,18 +1,18 @@
-In the Terramon mod, you can catch and evolve all of your favourite Pokemon from the Kanto region!
-The mod also features:
-- A new NPC who sells you important items such as Pokeballs
-- Rare Candies dropped from bosses to level up and evolve your Pokemon
-- A new Pokemon Trainer costume for you to wear
-- A music box to listen to music with i guess
+﻿[c/eb4034:[This is a beta! Expect bugs and missing features (e.g. battling)]]
 
-TODO: make the description better than this -w-
+The Terramon Mod is a cross between Terraria and the Pokemon franchise!
+Currently, this mod features:
+• Over 100 Pokemon!
+• Refined Poke Ball mechanics
+• A new NPC to buy Poke Balls from
+• Rare Candies and Stones to evolve your Pokemon
+• A Pokemon Trainer vanity outfit
+• A new Pokemon Center music track
 
-- Team Credits -
+﻿[c/21ebab:-- Team Credits --]
 
-Jamz - Original Team Founder
-EpicBoi - Team Manager
 InfinaMii - Team Leader, Programmer + Spriter
+Jamz - Original Team Founder
 KindredTheFox - Programmer
-Salti - Programmer
 Lobsterabyte - Spriter
 L0ST5ILVER - Musician
