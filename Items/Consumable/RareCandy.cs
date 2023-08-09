@@ -81,9 +81,10 @@ namespace TerramonMod.Items.Consumable
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-            .AddCustomShimmerResult(ItemID.CandyCane, 3)
-            .Register();
+            var recipe = CreateRecipe();
+            recipe.AddCustomShimmerResult(ItemID.CandyCane, 3);
+            recipe.DisableRecipe();
+            recipe.Register();
         }
     }
 }
