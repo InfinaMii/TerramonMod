@@ -8,11 +8,12 @@ namespace TerramonMod.Items.Consumable
     class WaterStone : BaseEvolveItem
     {
         public override string ItemKey => "WaterStone";
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-            .AddCustomShimmerResult(ModContent.ItemType<ThunderStone>())
-            .Register();
-        }
-    }
+		public override void AddRecipes()
+		{
+			var recipe = CreateRecipe();
+			recipe.AddCustomShimmerResult(ModContent.ItemType<ThunderStone>());
+			recipe.DisableRecipe();
+			recipe.Register();
+		}
+	}
 }
