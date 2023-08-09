@@ -10,9 +10,10 @@ namespace TerramonMod.Items.Consumable
 		public override string ItemKey => "FireStone";
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-			.AddCustomShimmerResult(ModContent.ItemType<WaterStone>())
-			.Register();
+			var recipe = CreateRecipe();
+			recipe.AddCustomShimmerResult(ModContent.ItemType<WaterStone>());
+			recipe.DisableRecipe();
+			recipe.Register();
 		}
 	}
 }
