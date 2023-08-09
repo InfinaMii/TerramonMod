@@ -105,7 +105,8 @@ NPCs: {
 			LikeNPC: I like {NPCName}. They've helped me out a ton.
 			DislikeNPC: I find {NPCName} a bit too loud.
 			HateNPC: I hate {NPCName}. He just doesn't respect Pokemon.
-			Princess_LovesNPC: I like {NPCName}. Who doesn't?
+			LikeNPC_Princess: I like {NPCName}. Who doesn't?
+			Princess_LovesNPC: I like {NPCName}.
 		}
 	}
 
