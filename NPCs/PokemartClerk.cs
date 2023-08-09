@@ -66,7 +66,6 @@ namespace TerramonMod.NPCs
                 .SetBiomeAffection<CrimsonBiome>(AffectionLevel.Dislike)
                 .SetNPCAffection(NPCID.Mechanic, AffectionLevel.Like)
                 .SetNPCAffection(NPCID.Merchant, AffectionLevel.Like)
-                .SetNPCAffection(NPCID.Princess, AffectionLevel.Like)
                 .SetNPCAffection(NPCID.Pirate, AffectionLevel.Dislike)
                 .SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Hate)
             ; // < Mind the semicolon!

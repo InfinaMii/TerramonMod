@@ -103,10 +103,9 @@ NPCs: {
 			LikeBiome: There are so many Pokemon to see in {BiomeName}!
 			DislikeBiome: I dislike {BiomeName}. It's so creepy and everything is out to get you!
 			LikeNPC: I like {NPCName}. They've helped me out a ton.
-			LikeNPC_Princess: I like {NPCName}. Who doesn't?
 			DislikeNPC: I find {NPCName} a bit too loud.
 			HateNPC: I hate {NPCName}. He just doesn't respect Pokemon.
-			Princess_LovesNPC: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}. Who doesn't?
 		}
 	}
 
