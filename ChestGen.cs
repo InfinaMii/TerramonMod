@@ -21,7 +21,7 @@ namespace GenUtils
             for (int chestIndex = 0; chestIndex < Main.maxChests; chestIndex++)
             {
                 //if the drop chance for this chest is unsuccessful, skip this chest
-                if (WorldGen.genRand.Next(0, 10000) <= chance)
+                if (WorldGen.genRand.Next(0, 10000) < chance)
                     continue;
 
                 Chest chest = Main.chest[chestIndex];

@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using TerramonMod.Items.Pokeballs;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
@@ -67,6 +68,14 @@ namespace TerramonMod.Tiles
 			Item.rare = ItemRarityID.LightRed;
 			Item.value = 100000;
 			Item.accessory = true;
+		}
+
+		public override void AddRecipes()
+		{
+			CreateRecipe()
+				.AddIngredient(ItemID.MusicBox)
+				.AddTile(TileID.TinkerersWorkbench)
+				.Register();
 		}
 	}
 }

@@ -91,6 +91,8 @@ namespace TerramonMod.Pokemon
 			//NPC.dontTakeDamage = true;
 		}
 
+		public override bool? CanBeCaughtBy(Item item, Player player) => false;
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             float spawnChance = 0f;
@@ -347,7 +349,7 @@ namespace TerramonMod.Pokemon
 			Texture2D sprite = ModContent.Request<Texture2D>(spritePath).Value;
 
 			// draw the sprite
-			spriteBatch.Draw(sprite, new Vector2(NPC.Center.X - (NPC.frame.Width * 0.19f), NPC.Center.Y - (NPC.frame.Height * 0.39f)) - screenPos, NPC.frame, NPC.GetShimmerColor(Color.White), NPC.rotation, NPC.Size / 2, NPC.scale * 2, NPC.spriteDirection == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0f);
+			spriteBatch.Draw(sprite, new Vector2(NPC.Center.X - (NPC.frame.Width * 0.19f), NPC.Center.Y - (NPC.frame.Height * 0.39f)) - screenPos, NPC.frame, NPC.GetShimmerColor(drawColor), NPC.rotation, NPC.Size / 2, NPC.scale * 2, NPC.spriteDirection == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0f);
 			return false;
 		}
 

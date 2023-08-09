@@ -138,6 +138,7 @@ namespace TerramonMod.Items
 			}*/ //removed due to swapping balls whenever a new one is picked up
 			return false;
         }
+
 		public override bool CanStackInWorld(Item item2) => CanStack(item2);
 
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

@@ -28,7 +28,7 @@ namespace TerramonMod.NPCs
     public class PokemartClerk : ModNPC
     {
         private static int ShimmerHeadIndex;
-        private static Profiles.StackedNPCProfile NPCProfile;
+        private static StackedNPCProfile NPCProfile;
         public override void Load()
         {
             // Adds our Shimmer Head to the NPCHeadLoader.
@@ -45,7 +45,7 @@ namespace TerramonMod.NPCs
             NPCID.Sets.AttackType[Type] = 0;
             NPCID.Sets.AttackTime[Type] = 90; // The amount of time it takes for the NPC's attack animation to be over once it starts.
             NPCID.Sets.AttackAverageChance[Type] = 30;
-            NPCID.Sets.HatOffsetY[Type] = 3; // For when a party is active, the party hat spawns at a Y offset.
+            NPCID.Sets.HatOffsetY[Type] = 2; // For when a party is active, the party hat spawns at a Y offset.
             NPCID.Sets.ShimmerTownTransform[Type] = true;
 
             // Influences how the NPC looks in the Bestiary
@@ -59,21 +59,22 @@ namespace TerramonMod.NPCs
 
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
 
-            // Set Example Person's biome and neighbor preferences with the NPCHappiness hook. You can add happiness text and remarks with localization (See an example in ExampleMod/Localization/en-US.lang).
-            // NOTE: The following code uses chaining - a style that works due to the fact that the SetXAffection methods return the same NPCHappiness instance they're called on.
             NPC.Happiness
-                //.SetBiomeAffection<Biome>
-                .SetBiomeAffection<ForestBiome>(AffectionLevel.Like) // Example Person prefers the forest.
-                .SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike) // Example Person dislikes the snow.
-                .SetBiomeAffection<DesertBiome>(AffectionLevel.Love) // Example Person likes the desert.
-                .SetNPCAffection(NPCID.Dryad, AffectionLevel.Love) // Loves living near the dryad.
-                .SetNPCAffection(NPCID.Guide, AffectionLevel.Like) // Likes living near the guide.
-                .SetNPCAffection(NPCID.Merchant, AffectionLevel.Dislike) // Dislikes living near the merchant.
-                .SetNPCAffection(NPCID.Demolitionist, AffectionLevel.Hate) // Hates living near the demolitionist.
+                .SetBiomeAffection<OceanBiome>(AffectionLevel.Like)
+                .SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
+                .SetBiomeAffection<CorruptionBiome>(AffectionLevel.Dislike)
+                .SetBiomeAffection<CrimsonBiome>(AffectionLevel.Dislike)
+                .SetNPCAffection(NPCID.Mechanic, AffectionLevel.Like)
+                .SetNPCAffection(NPCID.Merchant, AffectionLevel.Like)
+                .SetNPCAffection(NPCID.Princess, AffectionLevel.Like)
+                .SetNPCAffection(NPCID.Pirate, AffectionLevel.Dislike)
+                .SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Hate)
             ; // < Mind the semicolon!
 
+            //breeder - bestiarygirl, nurse    stylist, partygirl
+
             // This creates a "profile" for our NPC, which allows for different textures during a party and/or while the NPC is shimmered.
-            NPCProfile = new Profiles.StackedNPCProfile(
+            NPCProfile = new StackedNPCProfile(
                 new DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture)),
                 new DefaultNPCProfile(Texture + "_Shimmer", ShimmerHeadIndex, Texture + "_Shimmer_Hatless")
             );
@@ -120,10 +121,16 @@ namespace TerramonMod.NPCs
         public override List<string> SetNPCNameList()
         {
             return new List<string>() {
-                "Ash",
-                "Somebody",
-                "Blocky",
-                "Colorless"
+                "Martin",
+                "Tom",
+                "Dave",
+                "Morshu",
+                "Terry",
+                "Steven",
+                "Xavier",
+                "Asher",
+                "Pikachu",
+                "Lance"
             };
         }
 
@@ -141,20 +148,54 @@ namespace TerramonMod.NPCs
             chat.Add("There are many different regions in the world. One day I hope to visit all of them!");
             //chat.Add("I conveniently sell Pokéballs for you to buy, but if you're short of cash you can always make your own using apricorns and iron!");
             chat.Add("A remake of Mobile Creatures has been announced! Though I'm not sure how I feel about the art style...");
-            chat.Add($"Ever since Pokémon started appearing in {Main.worldName}, I've dedicated my life to helping people care for them properly.");
+            chat.Add($"Ever since Pokémon started appearing in {Main.worldName}, I've dedicated my life to helping people learn more about them.");
             chat.Add("The Pokémon around here seem very peaceful. It's unusual to see creatures geting along so well.");
+
+            if (NPC.GivenName == "Pikachu")
+                chat.Add("Now, I know what you're thinking. \"That's such a creative name!\"");
+
+            //only add chat about Pokemon if it exists
+            if (player.pokeInUse != null)
+            {
+                chat.Add($"Is that your {player.pokeInUse.data.GetInfo().Name}? Hi, {player.pokeInUse.data.GetName()}!");
+
+                if (player.pokeInUse.data.Nickname == null)
+                    chat.Add("Did you know you can give your Pokemon a nickname? Type \"/nickname \" in the chat alongside the name of your choice.");
+                else
+                    chat.Add($"{player.pokeInUse.data.Nickname}? That's a lovely name! I can tell you care about your Pokemon very much.");
+
+                var pokemonType = player.pokeInUse.data.GetInfo().type1;
+                if (pokemonType == TerramonMod.PkmnType.grass)
+                    chat.Add($"Is that a grass type Pokemon? Those are my favourite!");
+                else if (pokemonType == TerramonMod.PkmnType.ice)
+                    chat.Add($"An Ice type Pokemon! I've always loved seeing those.");
+
+                if (player.usePokeIsShiny)
+                    chat.Add("Is that a shiny Pokemon? That's incredible! I wish I had one myself.");
+                else if (player.usePokeIsShimmer)
+                    chat.Add("Interesting... Your Pokemon has the same colors as a shiny Pokemon, but none of the... well- shine.");
+            }
+
             if (NPC.IsShimmerVariant)
                 chat.Add("Like my outfit? I look just like a real Pokemon Trainer!");
             else
                 chat.Add("Have you heard of Shimmer? Apparently it can give people their own shiny form!");
-            if (player.usePokeIsShiny)
-                chat.Add("Is that a shiny Pokemon? That's incredible! I wish I had one myself.");
-            else if (player.usePokeIsShimmer)
-                chat.Add("Interesting... Your Pokemon has the same colors as a shiny Pokemon, but none of the... well - shine.");
 
             var merchant = NPC.FindFirstNPC(NPCID.Merchant);
             if (merchant >= 0)
                 chat.Add(Language.GetTextValue($"{Main.npc[merchant].GivenName} may be a bit greedy, but he has taught me everything I know about commerce."));
+
+            var mechanic = NPC.FindFirstNPC(NPCID.Mechanic);
+            if (mechanic >= 0)
+                chat.Add(Language.GetTextValue($"{Main.npc[mechanic].GivenName} knows a lot about Poke Balls. Maybe one day I could start selling more of them!"));
+
+            var pirate = NPC.FindFirstNPC(NPCID.Pirate);
+            if (pirate >= 0)
+                chat.Add(Language.GetTextValue($"Have you tried speaking to {Main.npc[pirate].GivenName}? I can never understand what he is saying."));
+
+            var armsDealer = NPC.FindFirstNPC(NPCID.ArmsDealer);
+            if (armsDealer >= 0)
+                chat.Add(Language.GetTextValue($"Can you tell {Main.npc[armsDealer].GivenName} to stop shooting at the Pokemon??"));
 
             return chat; // chat is implicitly cast to a string.
         }
