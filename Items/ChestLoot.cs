@@ -26,7 +26,7 @@ namespace TerramonMod.Items
             ChestGen.AddChestLoot(ModContent.ItemType<RareCandy>(), ChestID.Gold, minimumStack: 1, maximumStack: 3, chance: 7500);
             ChestGen.AddChestLoot(ModContent.ItemType<RareCandy>(), minimumStack: 1, maximumStack: 2, chance: 3500, excludeDuplicates: true);
             ChestGen.AddChestLoot(ModContent.ItemType<WaterStone>(), ChestID.Water, chance: 8500);
-            ChestGen.AddChestLoot(ModContent.ItemType<ThunderStone>(), ChestID.Dungeon, chance: 500);
+            ChestGen.AddChestLoot(ModContent.ItemType<ThunderStone>(), ChestID.Gold_Locked, chance: 500);
             ChestGen.AddChestLoot(ModContent.ItemType<FireStone>(), ChestID.Shadow_Locked, chance: 1000);
             ChestGen.AddChestLoot(ModContent.ItemType<LeafStone>(), ChestID.LivingTrees, chance: 1500);
             ChestGen.AddChestLoot(ModContent.ItemType<MoonStone>(), ChestID.Gold, chance: 500);
