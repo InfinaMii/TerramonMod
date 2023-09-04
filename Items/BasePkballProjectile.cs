@@ -330,6 +330,7 @@ namespace TerramonMod.Items
                 var newNPC = NPC.NewNPC(source, (int)Projectile.Center.X, (int)Projectile.Center.Y, capture.Type); // spawn a new NPC at the new position
                 var newPoke = (BasePkmn)Main.npc[newNPC].ModNPC;
                 newPoke.isShiny = capture.isShiny;
+                newPoke.isShimmer = capture.isShimmer;
                 newPoke.level = capture.level;
                 newPoke.catchAttempts = capture.catchAttempts + 1;
                 //Main.NewText($"Catch attempts: {newPoke.catchAttempts}", Color.Firebrick);

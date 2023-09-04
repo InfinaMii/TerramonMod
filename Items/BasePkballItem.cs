@@ -46,6 +46,7 @@ namespace TerramonMod.Items
 			Item.useStyle = ItemUseStyleID.Thrust;
 			Item.rare = ItemRarityID.Blue;
 			Item.value = igPrice * 3;
+			Item.useTime = 15;
 		}
 
 		public override bool CanShoot(Player player) => (data == null);
@@ -163,7 +164,7 @@ namespace TerramonMod.Items
                 }
 
 				tooltips.Add(new TooltipLine(Mod, "Tooltip0", $"A device for catching wild Pokémon."));
-				tooltips.Add(new TooltipLine(Mod, "Tooltip1", $"It contains a Level {data.level} {data.GetInfo().Name}."));
+				tooltips.Add(new TooltipLine(Mod, "Tooltip1", $"It contains a{(data.isShiny ? " Shiny" : null)} Level {data.level} {data.GetInfo().Name}."));
 
 				
 			}

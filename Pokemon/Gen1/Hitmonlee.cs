@@ -16,7 +16,7 @@ namespace TerramonMod.Pokemon.Gen1
 
         public override PkmnInfo info => HitmonleeInfo;
 
-        public override int wildLevel => 1;
+        public override int wildLevel => 0;
 
         public static PkmnInfo HitmonleeInfo = new PkmnInfo
         {
