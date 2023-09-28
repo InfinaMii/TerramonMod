@@ -1,7 +1,8 @@
 - InfinaMii -
 Rare Candy sprite
 Thrown Pokeball sprites
-Base Code for Pokeball + Pokemon
+Base code for Pokeball, Pokemon, Evolution
+All 0.1 code basically
 Pokemon Buff Icon
 Mod Icon
 
@@ -16,6 +17,9 @@ Trainer Vanity
 Pokeball Items
 Apricorn Items
 Evolution Stones
+
+- L0ST5ILVER -
+Pokemon Center music
 
 - Game Freak -
 Pokemon Sprites
