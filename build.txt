@@ -1,4 +1,4 @@
-displayName = Terramon Beta
+displayName = Terramon pre-release
 author = Terramon Team
 version = 0.1
 homepage = https://terramon.carrd.co
